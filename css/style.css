@@ -1,0 +1,19 @@
+video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: -1;
+  object-fit: cover;
+}
+
+#feature {
+  padding-top: 100vh;
+  height: 100vh;
+  color: #fff;
+}
+
+#stay {
+  height: 100vh;
+  background-color: #F9F3EC;
+}/*# sourceMappingURL=style.css.map */
