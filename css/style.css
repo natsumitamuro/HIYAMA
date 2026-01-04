@@ -1,14 +1,59 @@
-#main-visual,
-#intro {
-  min-height: 100vh;
+.section-title {
+  position: relative;
+  margin-bottom: 50px;
+  font-size: 32px;
+  text-align: center;
+}
+.section-title__jp {
+  display: inline-block;
+}
+.section-title__en {
+  position: absolute;
+  transform: translate(10%, 50%);
+  display: inline-block;
+  color: #BCAD7D;
+}
+
+.link-btn {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
+}
+.link-btn .page-link {
+  position: relative;
+  display: inline-block;
+  margin-inline: auto 40px;
+  padding-block: 40px 5px;
+  color: var(--link-color);
+  border-bottom: 2px solid transparent;
+  border-image: repeating-linear-gradient(to right, var(--link-color) 0, var(--link-color) 5px, transparent 2px, transparent 11px) 1;
+}
+.link-btn .page-link::before, .link-btn .page-link::after {
+  position: absolute;
+  right: -25px;
+  content: "";
+  width: 12px;
+  height: 2px;
+  display: inline-block;
+  border-radius: 2px;
+  background: var(--link-color);
+}
+.link-btn .page-link::before {
+  bottom: 18px;
+  transform: rotate(45deg);
+}
+.link-btn .page-link::after {
+  bottom: 10px;
+  transform: rotate(-45deg);
 }
 
 body {
   color: #2b5446;
+  line-height: 1.6;
+  letter-spacing: 0.2em;
+}
+
+section {
+  min-height: 100vh;
+  padding-top: 100px;
 }
 
 ul {
@@ -16,6 +61,7 @@ ul {
 }
 
 a {
+  color: #2b5446;
   text-decoration: none;
 }
 
@@ -37,6 +83,18 @@ header
   justify-content: space-between;
   padding: 20px 60px;
 }
+.header::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  padding: 3.8%;
+  pointer-events: none;
+  z-index: -1;
+  background: linear-gradient(to bottom, rgba(253, 251, 248, 0.95), rgba(253, 251, 248, 0.6), rgba(253, 251, 248, 0));
+}
 .header img {
   width: 100px;
 }
@@ -45,15 +103,15 @@ header
   gap: 30px;
 }
 .header .header__list ul li a {
-  display: inline-block;
   position: relative;
+  display: inline-block;
 }
 .header .header__list ul li a .nav-jp,
 .header .header__list ul li a .nav-en {
   position: relative;
   display: block;
   white-space: nowrap;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.1s ease;
 }
 .header .header__list ul li a .nav-jp {
   opacity: 1;
@@ -89,13 +147,43 @@ video
 }
 
 /*-------------------------------------------
+mainvisual
+-------------------------------------------*/
+.mainvisual {
+  position: relative;
+}
+.mainvisual .logo {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.2s linear;
+}
+
+/*-------------------------------------------
 intro
 -------------------------------------------*/
 .intro {
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+  --link-color: #fff;
+}
+.intro::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(253, 251, 248, 0), #F9F3EC);
 }
 .intro__lead {
-  padding-bottom: 40px;
+  margin-bottom: 40px;
   font-size: 24px;
   text-align: center;
 }
@@ -105,42 +193,110 @@ intro
 .intro__text p {
   padding-bottom: 15px;
 }
-.intro .link-btn {
-  display: flex;
-}
-.intro .link-btn .page-link {
+
+/*-------------------------------------------
+stay
+-------------------------------------------*/
+.stay {
   position: relative;
-  display: inline-block;
-  margin-inline: auto 40px;
-  padding-block: 40px 5px;
-  color: #fff;
-  border-bottom: 2px solid transparent;
-  border-image: repeating-linear-gradient(to right, #fff 0, #fff 5px, transparent 2px, transparent 11px) 1;
+  background: #F9F3EC;
+  --link-color: #2b5446;
 }
-.intro .link-btn .page-link::before, .intro .link-btn .page-link::after {
+.stay::after {
   position: absolute;
-  bottom: 9px;
-  right: -30px;
   content: "";
-  width: 12px;
-  height: 2px;
-  display: inline-block;
-  border-radius: 2px;
-  background: #fff;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  pointer-events: none;
+  background: linear-gradient(to bottom, #F9F3EC, #FDFBF8);
+}
+.stay__bg {
   position: absolute;
-  right: -25px;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
 }
-.intro .link-btn .page-link::before {
-  bottom: 18px;
-  transform: rotate(45deg);
+.stay__bg .bg-img {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
-.intro .link-btn .page-link::after {
-  bottom: 10px;
-  transform: rotate(-45deg);
+.stay__bg .icon {
+  bottom: 20%;
+  left: 30%;
+  width: 90px;
+  height: 120px;
+  background-image: url(../img/icon-gray.png);
+}
+.stay__bg .wave-top {
+  top: 5%;
+  right: 0;
+  width: 750px;
+  height: 120px;
+  background-image: url(../img/wave-top.png);
+}
+.stay__bg .wave-bottom {
+  bottom: 14%;
+  left: 0;
+  width: 800px;
+  height: 120px;
+  background-image: url(../img/wave-bottom.png);
+}
+.stay__content {
+  display: flex;
+  align-items: center;
+}
+.stay__text {
+  flex: 1;
+  text-align: center;
+  align-self: flex-start;
+  margin-top: 80px;
+}
+.stay__text p {
+  padding-bottom: 15px;
+}
+.stay__text .link-btn {
+  padding-right: 150px;
+}
+.stay__text .link-btn a {
+  color: #2b5446;
+}
+.stay__img {
+  text-align: right;
+}
+.stay__img img {
+  width: 450px;
 }
 
-#stay {
-  min-height: 100vh;
+/*-------------------------------------------
+location
+-------------------------------------------*/
+.location {
+  position: relative;
+  background: #FDFBF8;
+  --link-color: #2b5446;
+}
+.location::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  pointer-events: none;
+  background: linear-gradient(to bottom, #FDFBF8, #F9F3EC);
+}
+
+/*-------------------------------------------
+news
+-------------------------------------------*/
+.news {
   background: #F9F3EC;
-  border: 3px solid red;
-}/*# sourceMappingURL=style.css.map */
+  --link-color: #2b5446;
+}
+
+/*-------------------------------------------
+footer
+-------------------------------------------*//*# sourceMappingURL=style.css.map */

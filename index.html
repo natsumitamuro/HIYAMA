@@ -5,19 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SPA RESILIENCE HIYAMA</title>
+    <link rel="shortcut icon" href="img/icon-color.png">
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <header class="header">
-        <h1 class="header__logo"><img src="img/logo-h.svg"></h1>
+        <h1 class="header__logo"><img src="img/logo-b.svg"></h1>
         <nav class="header__list">
             <ul>
                 <li>
                     <a href="">
                         <span class="nav-jp">赤倉温泉</span>
-                        <span class="nav-en">Akakura Onsen</span>
+                        <span class="nav-en">About</span>
                     </a>
                 </li>
                 <li>
@@ -41,11 +42,12 @@
             </ul>
         </nav>
     </header>
+
     <div id="bg-video">
         <video src="img/main_video.mp4" autoplay loop muted playsinline></video>
     </div>
 
-    <section id="main-visual">
+    <section id="main-visual" class="mainvisual">
         <h1 class="logo"><img src="img/logo-h.svg"></h1>
     </section>
 
@@ -68,6 +70,11 @@
     </section>
 
     <section id="stay" class="stay">
+        <div class="stay__bg">
+            <span class="bg-img icon"></span>
+            <span class="bg-img wave-top"></span>
+            <span class="bg-img wave-bottom"></span>
+        </div>
         <div class="stay__inner">
             <h2 class="section-title">
                 <span class="section-title__jp">ご宿泊</span>
@@ -75,17 +82,43 @@
             </h2>
             <div class="stay__content">
                 <div class="stay__text">
-
+                    <p>和室6部屋の小さな宿です。<br>
+                        小さな宿だからこそ、ひと組ひと組の時間を大切にしています。
+                    </p>
+                    <p>
+                        シンプルな設備の中にも、心地よさには丁寧にこだわっています。<br>
+                        ぬくもりを感じながら、ゆったりとお過ごしください。
+                    </p>
+                    <div class="link-btn">
+                        <a class="page-link" href="">view more</a>
+                    </div>
                 </div>
                 <div class="stay__img">
-
+                    <img src="img/room1.jpg">
                 </div>
-            </div>
-            <div class="link-btn">
-                <a class="page-link" href="">view more</a>
             </div>
         </div>
     </section>
+
+    <section id="location" class="location">
+        <h2 class="section-title">
+            <span class="section-title__jp">周辺情報</span>
+            <span class="section-title__en">Location</span>
+        </h2>
+
+    </section>
+
+    <section id="news" class="news">
+        <h2 class="section-title">
+            <span class="section-title__jp">お知らせ</span>
+            <span class="section-title__en">News</span>
+        </h2>
+
+    </section>
+
+    <footer>
+
+    </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/main.js"></script>
