@@ -5,48 +5,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SPA RESILIENCE HIYAMA</title>
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <header>
-        <h1><img src="img/logo-h.svg"></h1>
-        <nav>
+    <header class="header">
+        <h1 class="header__logo"><img src="img/logo-h.svg"></h1>
+        <nav class="header__list">
             <ul>
-                <li>赤倉温泉</li>
-                <li>ご宿泊</li>
-                <li>周辺情報</li>
-                <li>お知らせ</li>
+                <li>
+                    <a href="">
+                        <span class="nav-jp">赤倉温泉</span>
+                        <span class="nav-en">Akakura Onsen</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="nav-jp">ご宿泊</span>
+                        <span class="nav-en">Stay</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="nav-jp">周辺情報</span>
+                        <span class="nav-en">Location</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="nav-jp">お知らせ</span>
+                        <span class="nav-en">News</span>
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>
-    <main>
+    <div id="bg-video">
         <video src="img/main_video.mp4" autoplay loop muted playsinline></video>
-        <section id="feature">
-            <h2>自然と湯に包まれる、ひやまの安らぎ。</h2>
-            <p>西暦641年、慈覚大師円仁が湯で傷を癒す馬を見て発見したと伝えられる赤倉温泉。</p>
-            <p>その源泉の恵みを受ける地、日山の奥に、私たちの宿があります。</p>
-            <p>
-                聞こえるのは、風の音と、湯の流れるやさしい音だけ。<br>
-                加温・加水を一切せず、源泉かけ流し100％の湯に身を委ねるひととき<br>
-                身体の奥から、心まで静かにほどけていきます。
-            </p>
-        </section>
-        <section id="stay">
-            <h2>ご宿泊</h2>
-            <p>
-                和室6部屋の小さな宿です。<br>
-                小さな宿だからこそ、一組ごとの時間を大切にしています。
-            </p>
-            <p>
-                設備はシンプルに、心地よさは丁寧に。<br>
-                ぬくもりを感じながら、のんびりとお過ごしください。
-            </p>
-            <img src="img/room1.jpg">
-        </section>
+    </div>
 
-    </main>
-    <footer></footer>
+    <section id="main-visual">
+        <h1 class="logo"><img src="img/logo-h.svg"></h1>
+    </section>
+
+    <section id="intro" class="intro">
+        <div class="intro__inner">
+            <p class="intro__lead">千年以上の時を越えて、今も息づく癒やしの湯。</p>
+            <div class="intro__text">
+                <p>赤倉温泉は、西暦641年、慈覚大師円仁が湯で傷を癒す馬を見て発見したと言われる古湯です。</p>
+                <p>その源泉の恵みを受ける地、日山の奥に、私たちの宿があります。</p>
+                <p>
+                    聞こえるのは、風の音と、湯の流れるやさしい音だけ。<br>
+                    加温・加水を一切せず、源泉かけ流し100％の湯に身を委ねるひととき、<br>
+                    身体の奥から、心まで静かにほどけていきます。
+                </p>
+            </div>
+            <div class="link-btn">
+                <a class="page-link" href="">view more</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="stay" class="stay">
+        <div class="stay__inner">
+            <h2 class="section-title">
+                <span class="section-title__jp">ご宿泊</span>
+                <span class="section-title__en">Stay</span>
+            </h2>
+            <div class="stay__content">
+                <div class="stay__text">
+
+                </div>
+                <div class="stay__img">
+
+                </div>
+            </div>
+            <div class="link-btn">
+                <a class="page-link" href="">view more</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
