@@ -1,7 +1,8 @@
 @charset "UTF-8";
 @use "mixin" as m;
 
-$section-title: 24px;
+$section-title: 32px;
+$sub-title: 24px;
 
 $bg-base: #F9F3EC;
 $bg-sub: #FDFBF8;
@@ -10,19 +11,76 @@ $text-main: #2b5446;
 $text-light: #fff;
 
 $accent-light: #E5DDD3;
-$accent-dark:  #BCAD7D;
+$accent-dark: #BCAD7D;
 
-#main-visual,
-#intro {
-    min-height: 100vh;
+
+.section-title {
+    position: relative;
+    margin-bottom: 50px;
+    font-size: 32px;
+    text-align: center;
+
+    &__jp {
+        display: inline-block;
+    }
+
+    &__en {
+        position: absolute;
+        transform: translate(10%, 50%);
+        display: inline-block;
+        color: $accent-dark;
+    }
+}
+
+.link-btn {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
+
+    .page-link {
+        position: relative;
+        display: inline-block;
+        margin-inline: auto 40px;
+        padding-block: 40px 5px;
+        color: var(--link-color);
+        border-bottom: 2px solid transparent;
+        border-image: repeating-linear-gradient(to right,
+                var(--link-color) 0,
+                var(--link-color) 5px,
+                transparent 2px,
+                transparent 11px) 1;
+
+        &::before,
+        &::after {
+            position: absolute;
+            right: -25px;
+            content: "";
+            width: 12px;
+            height: 2px;
+            display: inline-block;
+            border-radius: 2px;
+            background: var(--link-color);
+        }
+
+        &::before {
+            bottom: 18px;
+            transform: rotate(45deg);
+        }
+
+        &::after {
+            bottom: 10px;
+            transform: rotate(-45deg);
+        }
+    }
 }
 
 body {
     color: $text-main;
+    line-height: 1.6;
+    letter-spacing: 0.2em;
+}
+
+section {
+    min-height: 100vh;
+    padding-top: 100px;
 }
 
 ul {
@@ -30,6 +88,7 @@ ul {
 }
 
 a {
+    color: $text-main;
     text-decoration: none;
 }
 
@@ -53,6 +112,22 @@ header
     justify-content: space-between;
     padding: 20px 60px;
 
+    &::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 80px;
+        padding: 3.8%;
+        pointer-events: none;
+        z-index: -1;
+        background: linear-gradient(to bottom,
+                rgba(253, 251, 248, 0.95),
+                rgba(253, 251, 248, 0.6),
+                rgba(253, 251, 248, 0));
+    }
+
     img {
         width: 100px;
     }
@@ -62,15 +137,15 @@ header
         gap: 30px;
 
         li a {
-            display: inline-block;
             position: relative;
+            display: inline-block;
 
             .nav-jp,
             .nav-en {
                 position: relative;
                 display: block;
                 white-space: nowrap;
-                transition: opacity 0.3s ease;
+                transition: opacity 0.1s ease;
             }
 
             .nav-jp {
@@ -116,74 +191,188 @@ video
 }
 
 /*-------------------------------------------
+mainvisual
+-------------------------------------------*/
+.mainvisual {
+    position: relative;
+
+    .logo {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: opacity 0.2s linear;
+    }
+}
+
+/*-------------------------------------------
 intro
 -------------------------------------------*/
 .intro {
-    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
-    
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $text-light;
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0.4));
+    --link-color: #{$text-light};
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        pointer-events: none;
+
+        background: linear-gradient(to bottom,
+                rgba(253, 251, 248, 0),
+                $bg-base );
+    }
+
     &__lead {
-        padding-bottom: 40px;
-        font-size: $section-title;
+        margin-bottom: 40px;
+        font-size: $sub-title;
         text-align: center;
     }
-    
+
     &__text {
         text-align: center;
-        
+
         p {
             padding-bottom: 15px;
         }
     }
-    
-    .link-btn {
-        display: flex;
-        
-        .page-link {
-            position: relative;
-            display: inline-block;
-            margin-inline: auto 40px;
-            padding-block: 40px 5px;
-            color: #fff;
-            border-bottom: 2px solid transparent;
-            border-image: repeating-linear-gradient(to right,
-            #fff 0,
-            #fff 5px,
-            transparent 2px,
-                    transparent 11px) 1;
+}
 
-                    &::before,
-            &::after {
-                position: absolute;
-                bottom: 9px;
-                right: -30px;
-                
-                content: "";
-                width: 12px;
-                height: 2px;
-                display: inline-block;
-                border-radius: 2px;
-                background: #fff;
-                position: absolute;
-                right: -25px;
+/*-------------------------------------------
+stay
+-------------------------------------------*/
+.stay {
+    position: relative;
+    background: $bg-base;
+    --link-color: #{$text-main};
+
+    &::after {
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        pointer-events: none;
+        background: linear-gradient(to bottom,
+                $bg-base,
+                $bg-sub );
+    }
+
+    &__bg {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+
+        .bg-img {
+            position: absolute;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        .icon {
+            bottom: 20%;
+            left: 30%;
+            width: 90px;
+            height: 120px;
+            background-image: url(../img/icon-gray.png);
+        }
+
+        .wave-top {
+            top: 5%;
+            right: 0;
+            width: 750px;
+            height: 120px;
+            background-image: url(../img/wave-top.png);
+        }
+
+        .wave-bottom {
+            bottom: 14%;
+            left: 0;
+            width: 800px;
+            height: 120px;
+            background-image: url(../img/wave-bottom.png);
+        }
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+    }
+
+    &__text {
+        flex: 1;
+        text-align: center;
+        align-self: flex-start;
+        margin-top: 80px;
+
+        p {
+            padding-bottom: 15px;
+        }
+
+        .link-btn {
+            padding-right: 150px;
+
+            a {
+                color: $text-main;
             }
-            
-            &::before {
-                bottom: 18px;
-                transform: rotate(45deg);
-            }
-            
-            &::after {
-                bottom: 10px;
-                transform: rotate(-45deg);
-            }
+        }
+    }
+
+    &__img {
+        text-align: right;
+
+        img {
+            width: 450px;
         }
     }
 }
 
+/*-------------------------------------------
+location
+-------------------------------------------*/
+.location {
+    position: relative;
+    background: $bg-sub;
+    --link-color: #{$text-main};
 
-#stay {
-    min-height: 100vh;
-    background: $bg-base;
-    border: 3px solid red;
-    
+    &::after {
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        pointer-events: none;
+
+        background: linear-gradient(to bottom,
+                $bg-sub,
+                $bg-base );
+    }
+
+
 }
+
+/*-------------------------------------------
+news
+-------------------------------------------*/
+.news {
+    background: $bg-base;
+    --link-color: #{$text-main};
+
+}
+
+/*-------------------------------------------
+footer
+-------------------------------------------*/
