@@ -13,25 +13,41 @@ $text-light: #fff;
 $accent-light: #E5DDD3;
 $accent-dark: #BCAD7D;
 
-
+// セクションタイトル
 .section-title {
-    position: relative;
     margin-bottom: 50px;
     font-size: 32px;
     text-align: center;
-
-    &__jp {
-        display: inline-block;
+    
+    &__wrap {
+        display: inline-grid;
+        grid-template-columns: auto auto;
+        align-items: center;
+        column-gap: 5px;
     }
 
     &__en {
-        position: absolute;
-        transform: translate(10%, 50%);
-        display: inline-block;
+        align-self: end;
+        transform: translateY(40px);
         color: $accent-dark;
     }
 }
 
+// 背景装飾
+.section-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+
+    .bg-img {
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}
+
+// view moreボタン
 .link-btn {
     display: flex;
 
@@ -79,7 +95,7 @@ body {
 }
 
 section {
-    min-height: 100vh;
+    min-height: 120vh;
     padding-top: 100px;
 }
 
@@ -269,42 +285,31 @@ stay
                 $bg-sub );
     }
 
-    &__bg {
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-        z-index: 0;
 
-        .bg-img {
-            position: absolute;
-            background-repeat: no-repeat;
-            background-size: contain;
-        }
-
-        .icon {
-            bottom: 20%;
-            left: 30%;
-            width: 90px;
-            height: 120px;
-            background-image: url(../img/icon-gray.png);
-        }
-
-        .wave-top {
-            top: 5%;
-            right: 0;
-            width: 750px;
-            height: 120px;
-            background-image: url(../img/wave-top.png);
-        }
-
-        .wave-bottom {
-            bottom: 14%;
-            left: 0;
-            width: 800px;
-            height: 120px;
-            background-image: url(../img/wave-bottom.png);
-        }
+    .icon {
+        bottom: 20%;
+        left: 30%;
+        width: 90px;
+        height: 120px;
+        background-image: url(../img/icon-gray.png);
     }
+
+    .wave-top {
+        top: 5%;
+        right: 0;
+        width: 750px;
+        height: 120px;
+        background-image: url(../img/wave-top.png);
+    }
+
+    .wave-bottom {
+        bottom: 14%;
+        left: 0;
+        width: 800px;
+        height: 120px;
+        background-image: url(../img/wave-bottom.png);
+    }
+
 
     &__content {
         display: flex;
