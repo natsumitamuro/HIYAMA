@@ -7,40 +7,48 @@
     <title>SPA RESILIENCE HIYAMA</title>
     <link rel="shortcut icon" href="img/icon-color.png">
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Shippori+Mincho:wght@400;500;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <header class="header">
-        <h1 class="header__logo"><img src="img/logo-b.svg"></h1>
-        <nav class="header__list">
-            <ul>
-                <li>
-                    <a href="">
-                        <span class="nav-jp">赤倉温泉</span>
-                        <span class="nav-en">About</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <span class="nav-jp">ご宿泊</span>
-                        <span class="nav-en">Stay</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <span class="nav-jp">周辺情報</span>
-                        <span class="nav-en">Location</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <span class="nav-jp">お知らせ</span>
-                        <span class="nav-en">News</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1 class="header__logo"><img src="img/logo-b.svg"></h1>
+            <nav class="nav nav--header">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a class="nav__link" href="">
+                            <span class="nav__text nav__text--ja">赤倉温泉</span>
+                            <span class="nav__text nav__text--en">About</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="">
+                            <span class="nav__text nav__text--ja">施設案内</span>
+                            <span class="nav__text nav__text--en">Information</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="">
+                            <span class="nav__text nav__text--ja">周辺情報</span>
+                            <span class="nav__text nav__text--en">Location</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="">
+                            <span class="nav__text nav__text--ja">お知らせ</span>
+                            <span class="nav__text nav__text--en">News</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <div id="bg-video">
@@ -51,39 +59,41 @@
         <h1 class="logo"><img src="img/logo-h.svg"></h1>
     </section>
 
-    <section id="intro" class="intro">
-        <div class="intro__inner">
-            <p class="intro__lead">千年以上の時を越えて、今も息づく癒やしの湯。</p>
-            <div class="intro__text">
-                <p>赤倉温泉は、西暦641年、慈覚大師円仁が湯で傷を癒す馬を見て発見したと言われる古湯です。</p>
-                <p>その源泉の恵みを受ける地、日山の奥に、私たちの宿があります。</p>
-                <p>
-                    聞こえるのは、風の音と、湯の流れるやさしい音だけ。<br>
-                    加温・加水を一切せず、源泉かけ流し100％の湯に身を委ねるひととき、<br>
-                    身体の奥から、心まで静かにほどけていきます。
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about__inner">
+                <p class="about__lead">
+                    傷を癒やし、<br>
+                    こころを磨く、<br>
+                    今も息づく養生の湯
                 </p>
+                <div class="about__text">
+                    <p>赤倉温泉は、西暦641年、慈覚大師円仁が湯で傷を癒す馬を見て発見したと言われる古湯です。</p>
+                    <p>その源泉の恵みを受ける地、日山の奥に、私たちの宿があります。</p>
+                    <p>
+                        聞こえるのは、風の音と、湯の流れるやさしい音だけ。</p>
+                    <p>
+                        加温・加水を一切せず、源泉かけ流し100％の湯に身を委ねるひととき、身体の奥から、こころまで静かにほどけていきます。
+                    </p>
+                </div>
             </div>
-            <div class="link-btn">
-                <a class="page-link" href="">view more</a>
-            </div>
+            <a class="page-link" href="">view more</a>
         </div>
     </section>
 
-    <section id="stay" class="stay">
+    <section id="info" class="info">
         <div class="section-bg">
             <span class="bg-img icon"></span>
             <span class="bg-img wave-top"></span>
             <span class="bg-img wave-bottom"></span>
         </div>
-        <div class="stay__inner">
-            <h2 class="section-title">
-                <span class="section-title__wrap">
-                    <span class="section-title__jp">ご宿泊</span>
-                    <span class="section-title__en">Stay</span>
-                </span>
-            </h2>
-            <div class="stay__content">
-                <div class="stay__text">
+        <div class="info__inner container">
+            <div class="info__content">
+                <h2 class="section-title">
+                    <span class="section-title__en">Information</span>
+                    <span class="section-title__ja">施設について</span>
+                </h2>
+                <div class="info__text">
                     <p>和室6部屋の小さな宿です。<br>
                         小さな宿だからこそ、ひと組ひと組の時間を大切にしています。
                     </p>
@@ -91,76 +101,214 @@
                         シンプルな設備の中にも、心地よさには丁寧にこだわっています。<br>
                         ぬくもりを感じながら、ゆったりとお過ごしください。
                     </p>
-                    <div class="link-btn">
-                        <a class="page-link" href="">view more</a>
-                    </div>
                 </div>
-                <div class="stay__img">
-                    <img src="img/room1.jpg">
-                </div>
+                <a class="page-link" href="">view more</a>
+            </div>
+            <div class="info__img">
+                <img src="img/room1.jpg">
             </div>
         </div>
     </section>
 
     <section id="location" class="location">
-        <h2 class="section-title">
-            <span class="section-title__wrap">
-                <span class="section-title__jp">周辺情報</span>
-                <span class="section-title__en">Location</span>
-            </span>
-        </h2>
-        
-        <ul class="location__list">
-            <li class="card">
-                <div class="card__img"><img src="img/akakura-skiarea1.jpg"></div>
-                <h3 class="card__title">YAMAGATA MOGAMI</h3>
-                <p class="card__desc">
-                    赤倉温泉スキー場へは車で約5分。<br>
-                    アクティビティ後の滞在にも最適です。
-                </p>
-            </li>
-            <li class="card">
-                <div class="card__img"><img src="img/ginzan1.jpg"></div>
-                <h3 class="card__title">YAMAGATA MOGAMI</h3>
-                <p class="card__desc">
-                    赤倉温泉スキー場へは車で約5分。<br>
-                    アクティビティ後の滞在にも最適です。
-                </p>
-            </li>
-            <li class="card">
-                <div class="card__img"><img src="img/narukokyou1.jpg"></div>
-                <h3 class="card__title">YAMAGATA MOGAMI</h3>
-                <p class="card__desc">
-                    赤倉温泉スキー場へは車で約5分。<br>
-                    アクティビティ後の滞在にも最適です。
-                </p>
-            </li>
-            <li class="card">
-                <div class="card__img"><img src="img/hunakudari1.jpg"></div>
-                <h3 class="card__title">YAMAGATA MOGAMI</h3>
-                <p class="card__desc">
-                    赤倉温泉スキー場へは車で約5分。<br>
-                    アクティビティ後の滞在にも最適です。
-                </p>
-            </li>
-        </ul>
+        <div class="bg-slider">
+            <div data-index="0" class="bg-slider__item"></div>
+            <div data-index="1" class="bg-slider__item"></div>
+            <div data-index="2" class="bg-slider__item"></div>
+            <div data-index="3" class="bg-slider__item"></div>
+        </div>
+
+        <div class="location__content container">
+            <div class="location__text">
+                <h2 class="section-title">
+                    <span class="section-title__en">Location</span>
+                    <span class="section-title__ja">周辺情報</span>
+                </h2>
+                <div class="location__text__desc">
+                    <p>赤倉温泉は山形と宮城の県境に位置しており、お隣 宮城県へのアクセスも抜群です。</p>
+                    <p>冬は白銀のパウダースノーが舞う赤倉温泉スキー場までは車で5分ほどです。 新緑や紅葉の季節には、県境を越えた鳴子峡へも軽やかに足を延ばせます。</p>
+                    <p>当館を拠点に、山形や宮城の観光をお楽しみいただけます。</p>
+                </div>
+                <a class="page-link" href="">view more</a>
+            </div>
+            <ul class="location__slider">
+                <li class="location__slider__item">
+                    <img src="img/akakura-skiarea1.jpg">
+                    <h3 class="location__caption">赤倉温泉スキー場</h3>
+                </li>
+                <li class="location__slider__item">
+                    <img src="img/ginzan1.jpg">
+                    <h3 class="location__caption">銀山温泉</h3>
+                </li>
+                <li class="location__slider__item">
+                    <img src="img/hunakudari1.jpg">
+                    <h3 class="location__caption">最上川舟下り</h3>
+                </li>
+                <li class="location__slider__item">
+                    <img src="img/narukokyou1.jpg">
+                    <h3 class="location__caption">鳴子峡</h3>
+                </li>
+            </ul>
+        </div>
     </section>
 
     <section id="news" class="news">
-        <h2 class="section-title">
-            <span class="section-title__wrap">
-                <span class="section-title__jp">お知らせ</span>
-                <span class="section-title__en">News</span>
-            </span>
-        </h2>
+        <div class="news__inner container">
+            <!-- ニュースメニュー -->
+            <aside class="news__side">
+                <h2 class="section-title">
+                    <span class="section-title__wrap">
+                        <span class="section-title__en">News</span>
+                        <span class="section-title__ja">お知らせ</span>
+                    </span>
+                </h2>
+                <nav class="news__tabs">
+                    <button type="button" class="news__tab is-active" data-category="all">All</button>
+                    <button type="button" class="news__tab" data-category="event">イベント</button>
+                    <button type="button" class="news__tab" data-category="info">お知らせ</button>
+                </nav>
+            </aside>
 
+            <!-- 記事 -->
+            <div class="news__content">
+                <p class="news__lead">
+                    お知らせ、イベント情報、季節のお便りなどを随時お知らせします。
+                </p>
+                <ul class="news__list">
+                    <li class="news__item" data-category="event">
+                        <div class="news__img-wrap">
+                            <img src="img/news1.jpg" alt="ニュース1" class="news__img">
+                            <span class="news__overlay">more</span>
+                        </div>
+                        <div class="news__body">
+                            <div class="news__meta">
+                                <span class="news__category">イベント</span>
+                                <time datetime="2026-01-01" class="news__date">2026.01.01</time>
+                            </div>
+                            <p class="news__text">イベントのお知らせ</p>
+                        </div>
+                    </li>
+                    <li class="news__item" data-category="info">
+                        <div class="news__img-wrap">
+                            <img src="img/news2.jpg" alt="ニュース2" class="news__img">
+                            <span class="news__overlay">more</span>
+                        </div>
+                        <div class="news__body">
+                            <div class="news__meta">
+                                <span class="news__category">お知らせ</span>
+                                <time datetime="2026-01-02" class="news__date">2026.01.02</time>
+                            </div>
+                            <p class="news__text">施設のご案内</p>
+                        </div>
+                    </li>
+                    <li class="news__item" data-category="event">
+                        <div class="news__img-wrap">
+                            <img src="img/akakuraonsen1.jpg" alt="ニュース3" class="news__img">
+                            <span class="news__overlay">more</span>
+                        </div>
+                        <div class="news__body">
+                            <div class="news__meta">
+                                <span class="news__category">イベント</span>
+                                <time datetime="2026-01-03" class="news__date">2026.01.03</time>
+                            </div>
+                            <p class="news__text">新プラン開始</p>
+                        </div>
+                    </li>
+                    <li class="news__item" data-category="info">
+                        <div class="news__img-wrap">
+                            <img src="img/hunakudari1.jpg" alt="ニュース4" class="news__img">
+                            <span class="news__overlay">more</span>
+                        </div>
+                        <div class="news__body">
+                            <div class="news__meta">
+                                <span class="news__category">お知らせ</span>
+                                <time datetime="2026-01-04" class="news__date">2026.01.04</time>
+                            </div>
+                            <p class="news__text">営業時間のお知らせ</p>
+                        </div>
+                    </li>
+                    <li class="news__item" data-category="event">
+                        <div class="news__img-wrap">
+                            <img src="img/ginzan1.jpg" alt="ニュース5" class="news__img">
+                            <span class="news__overlay">more</span>
+                        </div>
+                        <div class="news__body">
+                            <div class="news__meta">
+                                <span class="news__category">イベント</span>
+                                <time datetime="2026-01-05" class="news__date">2026.01.05</time>
+                            </div>
+                            <p class="news__text">季節のイベント</p>
+                        </div>
+                    </li>
+                    <li class="news__item" data-category="info">
+                        <div class="news__img-wrap">
+                            <img src="img/akakura-skiarea1.jpg" alt="ニュース5" class="news__img">
+                            <span class="news__overlay">more</span>
+                        </div>
+                        <div class="news__body">
+                            <div class="news__meta">
+                                <span class="news__category">お知らせ</span>
+                                <time datetime="2026-01-06" class="news__date">2026.01.06</time>
+                            </div>
+                            <p class="news__text">お知らせ</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </section>
 
-    <footer>
-
+    <footer class="footer">
+        <div class="container">
+            <a href="" class="footer__hero">
+                <img class="footer__hero-img" src="img/akakuraonsen1.jpg">
+                <div class="footer__hero-text">
+                    <span class="footer__text--ja">ご予約</span>
+                    <span class="footer__text--en">Reservation</span>
+                </div>
+            </a>
+            <div class="footer__bottom">
+                <nav class="nav nav--footer">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a class="nav__link" href="">
+                                <span class="nav__text nav__text--ja">赤倉温泉</span>
+                                <span class="nav__text nav__text--en">About</span>
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="">
+                                <span class="nav__text nav__text--ja">施設案内</span>
+                                <span class="nav__text nav__text--en">Information</span>
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="">
+                                <span class="nav__text nav__text--ja">周辺情報</span>
+                                <span class="nav__text nav__text--en">Location</span>
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="">
+                                <span class="nav__text nav__text--ja">お知らせ</span>
+                                <span class="nav__text nav__text--en">News</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="footer__address">
+                    <h3 class="footer__title">スパレジリエンス ひやま</h3>
+                    <p>〒999-6105<br>
+                        山形県最上郡最上町富澤834-5<br>
+                        TEL：0233-45-0000
+                    </p>
+                </div>
+            </div>
+        </div>
     </footer>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 
