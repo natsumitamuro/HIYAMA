@@ -1,235 +1,9 @@
-@charset "UTF-8";
-@use "mixin" as m;
-
-$section-title: 32px;
-$sub-title: 24px;
-
-$bg-base: #F9F3EC;
-$bg-sub: #FDFBF8;
-
-$text-main: #2b5446;
-$text-light: #fff;
-
-$accent-light: #E5DDD3;
-$accent-dark: #BCAD7D;
-
-
-body {
-    color: $text-main;
-    line-height: 1.6;
-    letter-spacing: 0.2em;
-}
-
-section {
-    min-height: 120vh;
-    padding-top: 100px;
-}
-
-ul {
-    list-style: none;
-}
-
-a {
-    color: $text-main;
-    text-decoration: none;
-}
-
-img {
-    vertical-align: bottom;
-}
-
-.container {
-    max-width: 1300px;
-    padding: 0 20px;
-    margin-inline: auto;
-}
-
-// セクションタイトル
-.section-title {
-    margin: 0;
-
-    &__en {
-        display: block;
-        line-height: 1;
-        font-family: "Marcellus", serif;
-        font-size: 64px;
-    }
-
-    &__ja {
-        display: block;
-        font-size: 20px;
-        color: #A7A7A7;
-    }
-}
-
-// 背景装飾パス
-.section-bg {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-
-    .bg-img {
-        position: absolute;
-        background-repeat: no-repeat;
-        background-size: contain;
-    }
-}
-
-// view moreボタン
-// .link-btn {
-//     display: inline-flex;
-
-.page-link {
-    position: relative;
-    display: inline-block;
-    padding: 0;
-    color: var(--link-color);
-    border-bottom: 2px solid transparent;
-    border-image: repeating-linear-gradient(to right,
-            var(--link-color) 0,
-            var(--link-color) 5px,
-            transparent 2px,
-            transparent 11px) 1;
-
-    &::before,
-    &::after {
-        position: absolute;
-        right: -25px;
-        content: "";
-        width: 12px;
-        height: 2px;
-        display: inline-block;
-        border-radius: 2px;
-        background: var(--link-color);
-    }
-
-    &::before {
-        bottom: 18px;
-        transform: rotate(45deg);
-    }
-
-    &::after {
-        bottom: 10px;
-        transform: rotate(-45deg);
-    }
-}
-
-// }
-
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixin" as m;
 
 /*-------------------------------------------
-header
+Topページ
 -------------------------------------------*/
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 100;
-
-    // 初期：非表示
-    opacity: 0;
-    transform: translateY(-10px);
-    pointer-events: none;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-
-    // 背景グラデーション
-    &::before {
-        position: absolute;
-        content: "";
-        inset: 0;
-        padding: 3.8%;
-        pointer-events: none;
-        z-index: -1;
-        background: linear-gradient(to bottom,
-                rgba(253, 251, 248, 0.95),
-                rgba(253, 251, 248, 0.6),
-                rgba(253, 251, 248, 0));
-    }
-
-    .container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    &__logo img {
-        width: 100px;
-        margin: 10px 0;
-    }
-
-    .nav {
-        margin: 0;
-
-        &__list {
-            display: flex;
-            gap: 30px;
-        }
-
-        &__link {
-            position: relative;
-            display: inline-block;
-            min-width: 100px;
-            height: 1.6em;
-        }
-
-        &__text {
-            position: absolute;
-            top: 0;
-            left: 0;
-            transform: translate(-50%, -50%);
-            white-space: nowrap;
-            pointer-events: none;
-            transition: opacity 0.4s ease;
-
-            &--ja {
-                opacity: 1;
-                // transform: translateY(0);
-            }
-
-            &--en {
-                opacity: 0;
-                // transform: translateY(6px);
-                letter-spacing: 0;
-            }
-        }
-    }
-
-    // ===== スクロール about以降で固定表示 ===== 
-    &.is-show {
-        opacity: 1;
-        transform: translateY(0);
-        pointer-events: auto;
-
-        .nav__item:hover .nav__text--ja {
-            opacity: 0;
-            // transform: translateY(-6px);
-        }
-
-        .nav__item:hover .nav__text--en {
-            opacity: 1;
-            // transform: translateY(0);
-        }
-    }
-}
-
-
-/*-------------------------------------------
-video
--------------------------------------------*/
-#bg-video {
-    position: fixed;
-    inset: 0;
-    z-index: -100;
-
-    video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-}
-
 /*-------------------------------------------
 mainvisual
 -------------------------------------------*/
@@ -252,6 +26,7 @@ about
 .about {
     position: relative;
     color: $text-light;
+    padding-bottom: 120px; //Memo：授業
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
     background: linear-gradient(to bottom,
             rgba(0, 0, 0, 0),
@@ -304,7 +79,7 @@ about
     }
 
 
-    .page-link {
+    .btn--arrow {
         margin-right: 180px;
     }
 }
@@ -365,9 +140,14 @@ info
         }
     }
 
-    .page-link {
+    .btn--arrow {
         margin-left: auto;
         color: $text-main;
+    }
+
+    &__img {
+        z-index: 2;
+
     }
 
     &__img img {
@@ -441,7 +221,7 @@ location
             }
         }
 
-        .page-link {
+        .btn--arrow {
             padding-top: 40px;
             margin-left: auto;
         }
@@ -477,7 +257,7 @@ location
             bottom: 150px;
             margin: 0;
             background: #fff;
-            color: $accent-dark;
+            color: $text-main;
             text-shadow: none;
             font-size: 30px;
             height: 80px;
@@ -619,7 +399,6 @@ news
         font-size: 11px;
     }
 
-
     &__category {
         padding: 3px 8px;
         border: 1px solid currentColor;
@@ -634,55 +413,8 @@ news
     }
 
     // ===== hover時 =====
-
     &__item:hover &__overlay {
         opacity: 1;
     }
 }
 
-/*-------------------------------------------
-footer
--------------------------------------------*/
-.footer {
-    background: $bg-sub;
-    padding-top: 50px;
-
-    &__hero {
-        position: relative;
-        display: block;
-        width: 100%;
-        height: 400px;
-        border-radius: 10px;
-        overflow: hidden;
-        margin-bottom: 40px;
-    }
-
-    &__hero-img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    &__hero-text {
-        position: absolute;
-        left: 20px;
-        bottom: 20px;
-        color: $text-light;
-        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
-    }
-
-    &__text {
-        &--ja {
-            font-size: 64px;
-        }
-
-        &--en {
-            font-family: "Marcellus", serif;
-            font-size: 30px;
-        }
-    }
-
-    &__bottom {
-        display: flex;
-    }
-}

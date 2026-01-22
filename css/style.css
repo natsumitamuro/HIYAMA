@@ -1,3 +1,7 @@
+@charset "UTF-8";
+/*-------------------------------------------
+base
+-------------------------------------------*/
 body {
   color: #2b5446;
   line-height: 1.6;
@@ -24,62 +28,8 @@ img {
 
 .container {
   max-width: 1300px;
-  padding: 0 20px;
+  padding: 0 50px;
   margin-inline: auto;
-}
-
-.section-title {
-  margin: 0;
-}
-.section-title__en {
-  display: block;
-  line-height: 1;
-  font-family: "Marcellus", serif;
-  font-size: 64px;
-}
-.section-title__ja {
-  display: block;
-  font-size: 20px;
-  color: #A7A7A7;
-}
-
-.section-bg {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-}
-.section-bg .bg-img {
-  position: absolute;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-.page-link {
-  position: relative;
-  display: inline-block;
-  padding: 0;
-  color: var(--link-color);
-  border-bottom: 2px solid transparent;
-  border-image: repeating-linear-gradient(to right, var(--link-color) 0, var(--link-color) 5px, transparent 2px, transparent 11px) 1;
-}
-.page-link::before, .page-link::after {
-  position: absolute;
-  right: -25px;
-  content: "";
-  width: 12px;
-  height: 2px;
-  display: inline-block;
-  border-radius: 2px;
-  background: var(--link-color);
-}
-.page-link::before {
-  bottom: 18px;
-  transform: rotate(45deg);
-}
-.page-link::after {
-  bottom: 10px;
-  transform: rotate(-45deg);
 }
 
 /*-------------------------------------------
@@ -156,19 +106,95 @@ header
 }
 
 /*-------------------------------------------
-video
+footer
 -------------------------------------------*/
-#bg-video {
-  position: fixed;
-  inset: 0;
-  z-index: -100;
+.footer {
+  background: #FDFBF8;
+  padding-top: 50px;
 }
-#bg-video video {
+.footer__hero {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 400px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+.footer__hero-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+.footer__hero-text {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+.footer__text--ja {
+  font-size: 64px;
+}
+.footer__text--en {
+  font-family: "Marcellus", serif;
+  font-size: 30px;
+}
+.footer__bottom {
+  display: flex;
+}
 
+/*-------------------------------------------
+section-title
+-------------------------------------------*/
+.section-title {
+  margin: 0;
+}
+.section-title__en {
+  display: block;
+  line-height: 1;
+  font-family: "Marcellus", serif;
+  font-size: 64px;
+}
+.section-title__ja {
+  display: block;
+  font-size: 20px;
+  color: #A7A7A7;
+}
+
+/*-------------------------------------------
+btn
+-------------------------------------------*/
+.btn--arrow {
+  position: relative;
+  display: inline-block;
+  padding: 0;
+  color: var(--link-color);
+  border-bottom: 2px solid transparent;
+  border-image: repeating-linear-gradient(to right, var(--link-color) 0, var(--link-color) 5px, transparent 2px, transparent 11px) 1;
+}
+.btn--arrow::before, .btn--arrow::after {
+  position: absolute;
+  right: -25px;
+  content: "";
+  width: 12px;
+  height: 2px;
+  display: inline-block;
+  border-radius: 2px;
+  background: var(--link-color);
+}
+.btn--arrow::before {
+  bottom: 18px;
+  transform: rotate(45deg);
+}
+.btn--arrow::after {
+  bottom: 10px;
+  transform: rotate(-45deg);
+}
+
+/*-------------------------------------------
+Topページ
+-------------------------------------------*/
 /*-------------------------------------------
 mainvisual
 -------------------------------------------*/
@@ -190,6 +216,7 @@ about
 .about {
   position: relative;
   color: #fff;
+  padding-bottom: 120px;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9));
   --link-color: #fff;
@@ -230,7 +257,7 @@ about
 .about__text p {
   padding-bottom: 20px;
 }
-.about .page-link {
+.about .btn--arrow {
   margin-right: 180px;
 }
 
@@ -281,9 +308,12 @@ info
 .info__text p {
   padding-bottom: 15px;
 }
-.info .page-link {
+.info .btn--arrow {
   margin-left: auto;
   color: #2b5446;
+}
+.info__img {
+  z-index: 2;
 }
 .info__img img {
   width: 520px;
@@ -345,7 +375,7 @@ location
 .location__text__desc p {
   margin-bottom: 15px;
 }
-.location__text .page-link {
+.location__text .btn--arrow {
   padding-top: 40px;
   margin-left: auto;
 }
@@ -375,7 +405,7 @@ location
   bottom: 150px;
   margin: 0;
   background: #fff;
-  color: #BCAD7D;
+  color: #2b5446;
   text-shadow: none;
   font-size: 30px;
   height: 80px;
@@ -505,41 +535,28 @@ news
   opacity: 1;
 }
 
+.section-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.section-bg .bg-img {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 /*-------------------------------------------
-footer
+video
 -------------------------------------------*/
-.footer {
-  background: #FDFBF8;
-  padding-top: 50px;
+#bg-video {
+  position: fixed;
+  inset: 0;
+  z-index: -100;
 }
-.footer__hero {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 400px;
-  border-radius: 10px;
-  overflow: hidden;
-  margin-bottom: 40px;
-}
-.footer__hero-img {
+#bg-video video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-.footer__hero-text {
-  position: absolute;
-  left: 20px;
-  bottom: 20px;
-  color: #fff;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
-}
-.footer__text--ja {
-  font-size: 64px;
-}
-.footer__text--en {
-  font-family: "Marcellus", serif;
-  font-size: 30px;
-}
-.footer__bottom {
-  display: flex;
 }/*# sourceMappingURL=style.css.map */

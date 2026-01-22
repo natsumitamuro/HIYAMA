@@ -1,0 +1,41 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixin" as m;
+
+/*-------------------------------------------
+base
+-------------------------------------------*/
+
+// ==== base (全体に効くもの)====
+body {
+    color: $text-main;
+    line-height: 1.6;
+    letter-spacing: 0.2em;
+}
+
+
+// ==== Global element (HTMLタグに効くもの)====
+section {
+    min-height: 120vh;
+    padding-top: 100px;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: $text-main;
+    text-decoration: none;
+}
+
+img {
+    vertical-align: bottom;
+}
+
+
+// ==== Layout ====
+.container {
+    max-width: 1300px;
+    padding: 0 50px;
+    margin-inline: auto;
+}
