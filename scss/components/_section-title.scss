@@ -1,0 +1,22 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixin" as m;
+
+/*-------------------------------------------
+section-title
+-------------------------------------------*/
+.section-title {
+    margin: 0;
+
+    &__en {
+        display: block;
+        line-height: 1;
+        font-family: "Marcellus", serif;
+        font-size: 64px;
+    }
+
+    &__ja {
+        display: block;
+        font-size: 20px;
+        color: #A7A7A7;
+    }
+}

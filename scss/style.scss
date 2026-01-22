@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+@use "abstracts/variables" as *;
+@use "abstracts/mixin" as m;
+
+// layout
+@use "layout/base";
+@use "layout/header";
+@use "layout/footer";
+
+// components
+@use "components/section-title";
+@use "components/btn";
+
+// pages
+@use "pages/top";
+
+
+
+
+
+
+
+
+
+// 背景装飾パス
+.section-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+
+    .bg-img {
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}
+
+
+
+
+/*-------------------------------------------
+video
+-------------------------------------------*/
+#bg-video {
+    position: fixed;
+    inset: 0;
+    z-index: -100;
+
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+
+
