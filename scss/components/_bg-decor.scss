@@ -1,0 +1,26 @@
+.bg-decor {
+    position: absolute;
+    inset: 0; // セクション全体に乗せる
+    z-index: 0;
+    pointer-events: none;
+
+    &__img {
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        // 波のあしらい 
+        &--wave-top {
+            background-image: url(../img/wave-top.png);
+        }
+
+        &--wave-bottom {
+            background-image: url(../img/wave-bottom.png);
+        }
+
+        // 猫のあしらい 
+        &--cat {
+            background-image: url(../img/icon-gray.png);
+        }
+    }
+}

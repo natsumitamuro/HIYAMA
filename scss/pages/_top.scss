@@ -26,7 +26,6 @@ about
 .about {
     position: relative;
     color: $text-light;
-    padding-bottom: 120px; //Memo：授業
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
     background: linear-gradient(to bottom,
             rgba(0, 0, 0, 0),
@@ -59,6 +58,11 @@ about
         display: flex;
         justify-content: center;
         gap: 60px;
+
+        @include m.sp {
+            flex-direction: column;
+            gap: 0;
+        }
     }
 
     &__lead {
@@ -67,20 +71,38 @@ about
         text-decoration-thickness: 3px;
         text-underline-offset: 10px;
         line-height: 2.8;
+
+        @include m.sp {
+            line-height: 2.3;
+            font-size: 24px;
+        }
     }
 
     &__text {
         width: 40%;
         padding-top: 80px;
 
-        p {
-            padding-bottom: 20px;
+        @include m.sp {
+            width: 100%;
+            padding-top: 50px;
         }
     }
 
+    &__text p {
+        padding-bottom: 20px;
+
+        @include m.sp {
+            padding-bottom: 0px;
+            line-height: 1.9;
+        }
+    }
 
     .btn--arrow {
-        margin-right: 180px;
+        margin-right: 15%;
+
+        @include m.sp {
+            margin-right: 8%;
+        }
     }
 }
 
@@ -92,66 +114,114 @@ info
     background: $bg-base;
     --link-color: #{$text-main};
 
-    // 背景 装飾パス
-    .icon {
-        bottom: 20%;
-        left: 30%;
-        width: 90px;
-        height: 120px;
-        background-image: url(../img/icon-gray.png);
-    }
-
-    .wave-top {
-        top: 5%;
+    .bg-decor__img--wave-top {
+        top: 7%;
         right: 0;
-        width: 750px;
-        height: 120px;
-        background-image: url(../img/wave-top.png);
+        width: 50%;
+        height: 20%;
+
+        @include m.tab {
+            top: 15%;
+            width: 75%;
+        }
+
+        @include m.sp {
+            top: 5%;
+            width: 75%;
+        }
     }
 
-    .wave-bottom {
-        bottom: 14%;
+    .bg-decor__img--wave-bottom {
+        bottom: 3%;
         left: 0;
-        width: 800px;
-        height: 120px;
-        background-image: url(../img/wave-bottom.png);
+        width: 80%;
+        height: 20%;
+
+        @include m.sp {
+            bottom: 4%;
+            left: 0;
+            width: 80%;
+            height: 5%;
+        }
     }
 
     &__inner {
         display: flex;
         justify-content: space-between;
-        margin-top: 50px;
+        gap: 20px;
+        width: 100%;
+
+        @include m.tab {
+            gap: 50px;
+        }
+
+        @include m.sp {
+            flex-direction: column;
+            gap: 0;
+        }
     }
 
     &__content {
         display: flex;
         flex-direction: column;
+        width: 48%;
+
+        @include m.tab {
+            width: 60%;
+        }
+
+        @include m.sp {
+            display: contents;
+        }
     }
 
     .section-title {
-        margin-bottom: 90px;
+        @include m.sp {
+            order: 1;
+        }
     }
 
     &__text {
         margin-bottom: 40px;
 
-        p {
-            padding-bottom: 15px;
+        @include m.tab {
+            margin-bottom: 15px;
         }
+
+        @include m.sp {
+            order: 3;
+            margin-top: 10px;
+            margin-bottom: 0px;
+        }
+    }
+
+    &__text p {
+        padding-bottom: 15px;
     }
 
     .btn--arrow {
         margin-left: auto;
+        margin-right: 8%;
         color: $text-main;
+
+        @include m.sp {
+            order: 4;
+        }
     }
 
     &__img {
         z-index: 2;
+        width: 42%;
 
+        @include m.sp {
+            order: 2;
+            width: calc(100% + 40px);
+            margin-inline: -20px;
+        }
     }
 
     &__img img {
-        width: 520px;
+        width: 100%;
     }
 }
 
@@ -159,10 +229,10 @@ info
 location
 -------------------------------------------*/
 .location {
-    color: #EDEDED;
+    color: #fff;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
     padding-top: 0;
-    --link-color: #EDEDED;
+    --link-color: #fff;
 
     // 背景スライダー
     position: relative;
@@ -175,23 +245,23 @@ location
         z-index: 0;
         height: 100%;
         background: #000;
+    }
 
-        &__item {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            // filter: blur(9px);
-            filter: blur(9px) brightness(0.82);
-            transform: scale(1.1);
-            opacity: 0;
-            transition: opacity 1.2s ease;
+    .bg-slider__item {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        filter: blur(9px) brightness(0.82);
 
-            &.is-active {
-                opacity: 1;
-            }
+        transform: scale(1.1);
+        opacity: 0;
+        transition: opacity 1.2s ease;
+
+        &.is-active {
+            opacity: 1;
         }
     }
 
@@ -200,30 +270,56 @@ location
         z-index: 1;
         display: flex;
         justify-content: space-between;
+        width: 100%;
         height: 100%;
+
+        @include m.sp {
+            flex-direction: column;
+        }
+    }
+
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 45%;
+
+        @include m.sp {
+            display: contents;
+            width: 100%;
+        }
+    }
+
+    .section-title {
+        @include m.sp {
+            order: 1;
+        }
     }
 
     .section-title__ja {
         color: currentColor;
     }
 
-    &__text {
-        display: flex;
-        flex-direction: column;
-        width: 45%;
-        padding-top: 180px;
-
-        &__desc {
-            padding-top: 110px;
-
-            p {
-                margin-bottom: 15px;
-            }
+    &__text__desc {
+        @include m.sp {
+            order: 3;
+            margin-top: 10px;
         }
+    }
 
-        .btn--arrow {
-            padding-top: 40px;
-            margin-left: auto;
+    &__text__desc p {
+        margin-bottom: 15px;
+    }
+
+    .btn--arrow {
+        padding-top: 40px;
+        margin-left: auto;
+
+        @include m.sp {
+            order: 4;
+            padding-top: 0;
+            margin-right: 8%;
         }
     }
 
@@ -233,35 +329,58 @@ location
         margin: 0;
         padding: 0;
 
-        .slick-list,
-        .slick-track,
-        &__item {
-            height: 100%;
-        }
-
-        &__item {
-            position: relative;
-        }
-
-        &__item img {
+        @include m.sp {
+            order: 2;
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
+            height: 35%;
+        }
+    }
+
+    .slick-list,
+    .slick-track,
+    &__slider__item {
+        height: 100%;
+    }
+
+    &__slider__item {
+        position: relative;
+    }
+
+    &__slider__item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .location__caption {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 15%;
+        margin: 0;
+        height: 60px;
+        padding-top: 5px;
+
+        color: $text-main;
+        text-shadow: none;
+        text-align: center;
+        font-size: 30px;
+
+        background: #fff;
+        outline: 2px solid $accent-dark;
+        outline-offset: -6px;
+
+        @include m.tab {
+            padding-top: 10px;
+            font-size: 24px;
         }
 
-        .location__caption {
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 150px;
-            margin: 0;
-            background: #fff;
-            color: $text-main;
-            text-shadow: none;
-            font-size: 30px;
-            height: 80px;
-            text-align: right;
+        @include m.sp {
+            bottom: 3%;
+            height: 40px;
+            padding-top: 7px;
+            font-size: 16px;
         }
     }
 }
@@ -271,11 +390,17 @@ news
 -------------------------------------------*/
 .news {
     background: $bg-base;
+    --link-color: #{$text-main};
+
 
     &__inner {
         display: flex;
         justify-content: space-between;
-        margin-top: 20px;
+        width: 100%;
+
+        @include m.sp {
+            flex-direction: column;
+        }
     }
 
     // ===== サイドバー =====
@@ -283,6 +408,18 @@ news
         width: 250px;
         border-right: 1px solid $accent-dark;
         margin-right: 40px;
+
+        @include m.sp {
+            display: contents;
+            width: 100%;
+            border-right: none;
+        }
+    }
+
+    .section-title {
+        @include m.sp {
+            order: 1;
+        }
     }
 
     &__tabs {
@@ -291,6 +428,17 @@ news
         flex-direction: column;
         align-items: flex-start;
         gap: 15px;
+
+        @include m.sp {
+            order: 3;
+            flex-direction: row;
+            // justify-content: flex-end;
+            margin-top: 0;
+            margin-bottom: 30px;
+            padding-top: 10px;
+            border-top: 1px solid $accent-dark ;
+
+        }
     }
 
     &__tab {
@@ -298,7 +446,6 @@ news
         padding: 8px;
         background: $bg-sub;
         color: $text-main;
-        // border: 1px solid currentColor;
         border-radius: 9999px;
         cursor: pointer;
         transition: background-color 0.25s ease, color 0.25s ease;
@@ -308,7 +455,6 @@ news
             background: $accent-light;
             color: $text-main;
             box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-            // transform: translateY(-1px);
         }
 
         &.is-active {
@@ -320,22 +466,42 @@ news
 
     // ===== 記事 =====
     &__content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
         margin-top: 30px;
+
+        @include m.sp {
+            display: contents;
+        }
     }
 
     &__lead {
         padding-bottom: 30px;
+
+        @include m.sp {
+            order: 2;
+            padding-bottom: 10px;
+        }
     }
 
     &__list {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 40px;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        min-height: 600px;
+        align-items: start;
+
+        @include m.sp {
+            order: 4;
+min-height: auto;
+        }
     }
 
     // ===== リスト内容 =====
 
     &__item {
+        width: 100%;
         background: #fff;
         border-radius: 5px;
         box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
@@ -412,9 +578,18 @@ news
         font-weight: bold;
     }
 
+    .btn--arrow {
+        margin-top: 40px;
+        margin-left: auto;
+        margin-right: 4%;
+
+        @include m.sp {
+            order: 5;
+        }
+    }
+
     // ===== hover時 =====
     &__item:hover &__overlay {
         opacity: 1;
     }
 }
-
