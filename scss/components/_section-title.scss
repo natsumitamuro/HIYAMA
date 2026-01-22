@@ -5,18 +5,39 @@
 section-title
 -------------------------------------------*/
 .section-title {
-    margin: 0;
+    margin-bottom: 90px;
+
+    @include m.tab {
+        margin-bottom: 40px;
+    }
+
+    @include m.sp {
+        margin-bottom: 20px;
+    }
 
     &__en {
         display: block;
         line-height: 1;
         font-family: "Marcellus", serif;
         font-size: 64px;
+
+        @include m.tab {
+            font-size: 48px;
+        }
+
+        @include m.sp {
+            font-size: 32px;
+        }
     }
 
     &__ja {
         display: block;
         font-size: 20px;
         color: #A7A7A7;
+
+        @include m.tab {
+            font-size: 16px;
+        }
+
     }
 }

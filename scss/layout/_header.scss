@@ -61,10 +61,11 @@ header
             position: absolute;
             top: 0;
             left: 0;
-            transform: translate(-50%, -50%);
+            right: 0;
             white-space: nowrap;
             pointer-events: none;
             transition: opacity 0.4s ease;
+            text-align: center;
 
             &--ja {
                 opacity: 1;
@@ -93,6 +94,10 @@ header
         .nav__item:hover .nav__text--en {
             opacity: 1;
             // transform: translateY(0);
+        }
+
+        @include m.sp {
+            opacity: 0;
         }
     }
 }
