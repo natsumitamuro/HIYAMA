@@ -8,42 +8,265 @@ footer
     background: $bg-sub;
     padding-top: 50px;
 
+    // === 予約 ===
     &__hero {
         position: relative;
         display: block;
         width: 100%;
-        height: 400px;
+        height: 350px;
         border-radius: 10px;
         overflow: hidden;
-        margin-bottom: 40px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.45);
+            opacity: 0;
+            transition: opacity 0.9s ease;
+        }
+
+        &:hover {
+            &::after {
+                opacity: 1;
+            }
+        }
+
+        &:hover &-img {
+            transform: scale(1.1);
+        }
+
+        &:hover .footer__hero-text {
+            transform: translateY(-7px);
+            transition: transform 0.9s ease;
+        }
     }
 
     &__hero-img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        transition: transform 0.9s ease;
     }
 
     &__hero-text {
         position: absolute;
         left: 20px;
         bottom: 20px;
+        z-index: 10;
         color: $text-light;
         text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+        transition: transform 0.9s ease;
     }
 
     &__text {
         &--ja {
-            font-size: 64px;
+            font-size: 45px;
+
+            @include m.sp {
+                font-size: 32px;
+            }
         }
 
         &--en {
             font-family: "Marcellus", serif;
             font-size: 30px;
+
+            @include m.sp {
+                font-size: 24px;
+            }
         }
     }
 
-    &__bottom {
+    // === 住所・アクセス ===
+    &__info {
+        padding-top: 30px;
         display: flex;
+        justify-content: center;
+        gap: 30px;
+        letter-spacing: normal;
+
+        @include m.sp {
+            flex-direction: column;
+        }
+    }
+
+    &__profile {
+        flex-shrink: 0;
+        width: auto;
+        text-align: center;
+    }
+
+    &__logo {
+        width: 130px;
+        height: auto;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+
+    &__address {
+        font-style: normal;
+        font-size: 15px;
+        line-height: 1.8;
+        color: $text-main;
+    }
+
+    // GoogleMap
+    &__map {
+        flex: 1;
+        min-width: 400px;
+
+        @include m.tab {
+            min-width: 250px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 200px;
+            border-radius: 4px;
+        }
+    }
+
+    // アクセス詳細
+    &__access {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+    }
+
+    &__access-item {
+        min-height: 120px;
+
+        @include m.tab {
+            min-height: 150px;
+        }
+    }
+
+    &__access-toggle {
+        display: block;
+        width: 200px;
+        padding: 8px;
+        border-radius: 4px;
+        background-color: #F9F3EC;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+
+        position: relative;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        cursor: pointer;
+
+        &:hover {
+            background: #E5DDD3;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        }
+
+
+        &::after {
+            content: "";
+            position: absolute;
+            right: 10px;
+            top: 50%;
+
+            width: 9px;
+            height: 2px;
+            background-color: currentColor;
+            transform: translateY(-50%);
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            right: 13.5px;
+            top: 50%;
+            width: 2px;
+            height: 9px;
+            background-color: currentColor;
+            transform: translateY(-50%);
+            transition: all 0.3s ease;
+        }
+
+        &.is-open {
+            &::before {
+                transform: translateY(-50%) rotate(-90deg);
+            }
+        }
+    }
+
+    &__access-childmenu {
+        display: none;
+    }
+
+    // === SNS/nav ===
+    &__bottom {
+        padding: 20px 0;
+        background-color: #E5DDD3;
+        text-align: center;
+        color: $text-light;
+        text-shadow: 1px 1px 3px rgba(141, 132, 120, 0.4);
+        letter-spacing: normal;
+    }
+
+    &__bottom-main {
+        display: flex;
+        justify-content: center;
+        gap: 70px;
+        align-items: center;
+        padding-bottom: 10px;
+
+        @include m.sp {
+            padding-bottom: 30px;
+        }
+    }
+
+    &__sns {
+        display: flex;
+        gap: 30px;
+    }
+
+    &__icon {
+        width: 50px;
+        align-self: flex-end;
+    }
+
+    &__icon img {
+        height: auto;
+        object-fit: contain;
+    }
+
+    &__sns-inner {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    &__sns-list {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .sns-icon {
+        width: 30px;
+        filter: drop-shadow(1px 1px 3px rgba(141, 132, 120, 0.4));
+    }
+
+    .nav__list {
+        @include m.sp {
+            flex-direction: column;
+        }
+    }
+
+    .nav__item {
+        border-right: 1px solid $text-light;
+
+        @include m.sp {
+            border-right: none;
+        }
+
+        &:last-child {
+            border-right: none;
+        }
+    }
+
+    .nav__link {
+        color: $text-light;
+        text-shadow: 1px 1px 3px rgba(141, 132, 120, 0.4);
     }
 }
