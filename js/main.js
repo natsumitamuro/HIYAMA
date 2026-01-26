@@ -1,5 +1,10 @@
 $(function () {
-    let cardsShown = false; //カード出現動作しなかったらいらない
+    // =========================
+    // ハンバーガーメニュー
+    // =========================
+    $(".header__hamburger").on("click", function () {
+        $(".header").toggleClass("is-open");
+    });
 
     // =========================
     // スクロール関連
@@ -19,14 +24,6 @@ $(function () {
             $('.header').removeClass('is-show');
         }
 
-        // 3. locationカード出現
-        // const sectionTop = $('#location').offset().top;
-        // const windowH = $(window).height();
-
-        // if (!cardsShown && scrollTop + windowH > sectionTop + 500) {
-        //     cardsShown = true; // 一度だけ
-        //     $('.cards .card').addClass('is-show'); // 4枚まとめて表示
-        // }
     });
 
     // =========================
@@ -113,7 +110,10 @@ $(function () {
         $(this).next().slideToggle();
     });
 
+    // =========================
+    // footer:西暦取得
     // 現在の西暦を取得して、HTMLの .js-year に入れる
+    // =========================
     const currentYear = new Date().getFullYear();
     $(".js-year").text(currentYear);
 

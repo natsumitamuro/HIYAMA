@@ -35,6 +35,10 @@ header
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        @include m.sp {
+            padding: 0 20px;
+        }
     }
 
     &__logo img {
@@ -47,5 +51,47 @@ header
         opacity: 1;
         transform: translateY(0);
         pointer-events: auto;
+    }
+
+    // === ハンバーガー ===
+    &__hamburger {
+        display: none;
+
+        @include m.sp {
+            display: block;
+            width: 30px;
+            height: 30px;
+            position: relative;
+            cursor: pointer;
+            z-index: 100;
+
+            span {
+                display: block;
+                width: 30px;
+                height: 2px;
+                background-color: $text-main;
+                transition: 0.5s;
+                position: absolute;
+            }
+
+            span:nth-child(1) {
+                top: 8px;
+            }
+
+            span:nth-child(2) {
+                top: 18px;
+            }
+
+        }
+    }
+
+    &.is-open {
+        .header__hamburger span:nth-child(1) {
+            transform: translateY(5px) rotate(45deg);
+        }
+
+        .header__hamburger span:nth-child(2) {
+            transform: translateY(-5px) rotate(-45deg);
+        }
     }
 }

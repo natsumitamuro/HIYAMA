@@ -79,8 +79,9 @@ footer
     &__info {
         padding-top: 30px;
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
-        gap: 30px;
+        gap: 40px 30px;
         letter-spacing: normal;
 
         @include m.sp {
@@ -111,10 +112,9 @@ footer
     // GoogleMap
     &__map {
         flex: 1;
-        min-width: 400px;
 
         @include m.tab {
-            min-width: 250px;
+            width: 100%;
         }
 
         iframe {
@@ -127,9 +127,15 @@ footer
     // アクセス詳細
     &__access {
         display: flex;
+        width: auto;
+        flex: 1;
         flex-direction: column;
         gap: 20px;
-        width: 100%;
+
+        @include m.tab {
+            width: 100%;
+            flex: auto;
+        }
     }
 
     &__access-item {
@@ -206,7 +212,6 @@ footer
     &__bottom-main {
         display: flex;
         justify-content: center;
-        gap: 70px;
         align-items: center;
         padding-bottom: 10px;
 
@@ -268,5 +273,9 @@ footer
     .nav__link {
         color: $text-light;
         text-shadow: 1px 1px 3px rgba(141, 132, 120, 0.4);
+    }
+
+    .copyright {
+        font-size: 12px;
     }
 }
