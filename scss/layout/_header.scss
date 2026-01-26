@@ -42,62 +42,10 @@ header
         margin: 10px 0;
     }
 
-    .nav {
-        margin: 0;
-
-        &__list {
-            display: flex;
-            gap: 30px;
-        }
-
-        &__link {
-            position: relative;
-            display: inline-block;
-            min-width: 100px;
-            height: 1.6em;
-        }
-
-        &__text {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            white-space: nowrap;
-            pointer-events: none;
-            transition: opacity 0.4s ease;
-            text-align: center;
-
-            &--ja {
-                opacity: 1;
-                // transform: translateY(0);
-            }
-
-            &--en {
-                opacity: 0;
-                // transform: translateY(6px);
-                letter-spacing: 0;
-            }
-        }
-    }
-
     // ===== スクロール about以降で固定表示 ===== 
     &.is-show {
         opacity: 1;
         transform: translateY(0);
         pointer-events: auto;
-
-        .nav__item:hover .nav__text--ja {
-            opacity: 0;
-            // transform: translateY(-6px);
-        }
-
-        .nav__item:hover .nav__text--en {
-            opacity: 1;
-            // transform: translateY(0);
-        }
-
-        @include m.sp {
-            opacity: 0;
-        }
     }
 }

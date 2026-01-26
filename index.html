@@ -51,7 +51,7 @@
         </div>
     </header>
 
-    <div id="bg-video">
+    <div id="bg-video" class="bg-video">
         <video src="img/main_video.mp4" autoplay loop muted playsinline></video>
     </div>
 
@@ -126,7 +126,7 @@
                 <div class="location__text__desc">
                     <p>赤倉温泉は山形と宮城の県境に位置しており、お隣 宮城県へのアクセスも抜群です。</p>
                     <p>冬は白銀のパウダースノーが舞う赤倉温泉スキー場までは車で5分ほどです。 新緑や紅葉の季節には、県境を越えた鳴子峡へも軽やかに足を延ばせます。</p>
-                    <p>当館を拠点に、山形や宮城の観光をお楽しみいただけます。</p>
+                    <p>当館を拠点に、山形や宮城の観光をお楽しみください。</p>
                 </div>
                 <a class="btn--arrow" href="">view more</a>
             </div>
@@ -267,44 +267,99 @@
                     <span class="footer__text--en">Reservation</span>
                 </div>
             </a>
-            <div class="footer__bottom">
-                <nav class="nav nav--footer">
-                    <ul class="nav__list">
-                        <li class="nav__item">
-                            <a class="nav__link" href="">
-                                <span class="nav__text nav__text--ja">赤倉温泉</span>
-                                <span class="nav__text nav__text--en">About</span>
-                            </a>
-                        </li>
-                        <li class="nav__item">
-                            <a class="nav__link" href="">
-                                <span class="nav__text nav__text--ja">施設案内</span>
-                                <span class="nav__text nav__text--en">Information</span>
-                            </a>
-                        </li>
-                        <li class="nav__item">
-                            <a class="nav__link" href="">
-                                <span class="nav__text nav__text--ja">周辺情報</span>
-                                <span class="nav__text nav__text--en">Location</span>
-                            </a>
-                        </li>
-                        <li class="nav__item">
-                            <a class="nav__link" href="">
-                                <span class="nav__text nav__text--ja">お知らせ</span>
-                                <span class="nav__text nav__text--en">News</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="footer__address">
-                    <h3 class="footer__title">スパレジリエンス ひやま</h3>
-                    <p>〒999-6105<br>
-                        山形県最上郡最上町富澤834-5<br>
-                        TEL：0233-45-0000
-                    </p>
+            
+            <div class="footer__info">
+                <div class="footer__profile">
+                    <div class="footer__logo">
+                        <a href="">
+                            <img src="img/logo-b.svg">
+                        </a>
+                    </div>
+                    <div class="footer__address">
+                        <h3 class="footer__title">スパレジリエンス ひやま</h3>
+                        <p>〒999-6105
+                            山形県最上郡最上町富澤834-5<br>
+                            TEL：0233-45-0000
+                        </p>
+                    </div>
                 </div>
+                <div class="footer__map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1151.4939058893485!2d140.5493891920958!3d38.70786181694923!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f894f50efd041d9%3A0xaf031bb1c3319d6c!2z44Gy44KE44G-5bGx6I2YIOOBiua5r-OCu-ODs-OCv-ODvA!5e0!3m2!1sja!2sjp!4v1769106149015!5m2!1sja!2sjp"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <ul class="footer__access">
+                    <li class="footer__access-item">
+                        <p class="footer__access-toggle">古川 ICより(約20分)</p>
+                        <ul class="footer__access-childmenu">
+                            <li>
+                                <p>国道47号線を西へ。赤倉温泉駅付近の赤い橋を渡り、道なりに進むと看板があります。看板を左折し坂道を登ると当館に到着します。</p>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="footer__access-item">
+                        <p class="footer__access-toggle">尾花沢方面より</p>
+                        <ul class="footer__access-childmenu">
+                            <li>
+                                <p>山刀伐峠を抜け、赤倉温泉スキー場を過ぎたところに看板があります。看板を右折し坂道を登ると当館に到着します。</p>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </div>
+
+            <div class="footer__bottom">  
+                <div class="footer__bottom-main">
+                    <div class="footer__sns">
+                        <div class="footer__icon">
+                            <img src="img/icon-color.png">
+                        </div>
+                        <div class="footer__sns-inner">
+                            <p>Follow us</p>
+                            <ul class="footer__sns-list">
+                                <li class="footer__sns-item"><a href=""><img class="sns-icon"
+                                            src="img/Instagram-icon-white.png"></a></li>
+                                <li class="footer__sns-item"><a href=""><img class="sns-icon"
+                                            src="img/Facebook-icon-white.png"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <nav class="nav nav--footer">
+                        <ul class="nav__list">
+                            <li class="nav__item">
+                                <a class="nav__link" href="">
+                                    <span class="nav__text nav__text--ja">赤倉温泉</span>
+                                    <span class="nav__text nav__text--en">About</span>
+                                </a>
+                            </li>
+                            <li class="nav__item">
+                                <a class="nav__link" href="">
+                                    <span class="nav__text nav__text--ja">施設案内</span>
+                                    <span class="nav__text nav__text--en">Information</span>
+                                </a>
+                            </li>
+                            <li class="nav__item">
+                                <a class="nav__link" href="">
+                                    <span class="nav__text nav__text--ja">周辺情報</span>
+                                    <span class="nav__text nav__text--en">Location</span>
+                                </a>
+                            </li>
+                            <li class="nav__item">
+                                <a class="nav__link" href="">
+                                    <span class="nav__text nav__text--ja">お知らせ</span>
+                                    <span class="nav__text nav__text--en">News</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <p class="copyright">
+                    &copy; <span class="js-year"></span> Spa Resilience Hiyama. All rights reserved.
+                </p>
+            </div>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>

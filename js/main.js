@@ -67,7 +67,7 @@ $(function () {
     });
 
     // =========================
-    // News カテゴリ切り替え
+    // News：カテゴリ切り替え
     // =========================
     const $tabs = $('.news__tab');
     const $items = $('.news__item');
@@ -104,6 +104,18 @@ $(function () {
             });
         }, FADE_TIME);
     });
+
+    // =========================
+    // footer:アコーディオン
+    // =========================
+    $(".footer__access-toggle").on("click", function () {
+        $(this).toggleClass("is-open");
+        $(this).next().slideToggle();
+    });
+
+    // 現在の西暦を取得して、HTMLの .js-year に入れる
+    const currentYear = new Date().getFullYear();
+    $(".js-year").text(currentYear);
 
 
 });

@@ -1,0 +1,57 @@
+@use "../abstracts/mixin" as m;
+
+/*-------------------------------------------
+nav
+-------------------------------------------*/
+.nav {
+
+    &__list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__link {
+        position: relative;
+        display: block;
+        width: 100px;
+        height: 1.6em;
+    }
+
+    &__item {
+        padding: 0 20px;
+
+        &:hover {
+            .nav__text--ja {
+                opacity: 0;
+            }
+
+            .nav__text--en {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__text {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        white-space: nowrap;
+        pointer-events: none;
+        transition: opacity 0.4s ease;
+        text-align: center;
+        width: 100%;
+
+        &--ja {
+            opacity: 1;
+        }
+
+        &--en {
+            opacity: 0;
+            letter-spacing: 0;
+        }
+    }
+
+
+}
