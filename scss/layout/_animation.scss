@@ -1,20 +1,17 @@
+@use "../abstracts/mixin" as m;
+
 .fadeIn_up {
     opacity: 0;
-    transform: translate(0, 30%);
+    transform: translateY(40px);
     transition: 2s;
-}
 
-.fadeIn_up.is-show {
-    transform: translate(0, 0);
-    opacity: 1;
-}
+    @include m.sp {
+        transform: translateY(20px);
+        transition: .6s ease;
+    }
 
-
-.steam-wrap {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    gap: 20px;
+    &.is-show {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
