@@ -1,10 +1,11 @@
+@use "../abstracts/variables" as *;
 @use "../abstracts/mixin" as m;
 
 /*-------------------------------------------
 nav
 -------------------------------------------*/
 .nav {
-    @include m.sp {
+    @include m.tab {
         position: fixed;
         top: 0;
         left: 0;
@@ -19,6 +20,7 @@ nav
 
         display: flex;
         align-items: center;
+        justify-content: center;
         cursor: pointer;
 
         .header.is-open & {
@@ -31,7 +33,7 @@ nav
         display: none;
         position: relative;
 
-        @include m.sp {
+        @include m.tab {
             display: block;
             width: 60%;
             height: 100%;
@@ -51,8 +53,9 @@ nav
         justify-content: center;
         align-items: center;
 
-        @include m.sp {
+        @include m.tab {
             flex-direction: column;
+            width: 40%;
             gap: 40px;
         }
     }
@@ -65,7 +68,7 @@ nav
     }
 
     &__item {
-        padding: 0 20px;
+        padding-left: 5px;
 
         &:hover {
             .nav__text--ja {
@@ -75,6 +78,63 @@ nav
             .nav__text--en {
                 opacity: 1;
             }
+        }
+    }
+
+    // 料金の日本語の幅を広げる
+    &__item--plan {
+        .nav__text--ja {
+            letter-spacing: 1em;
+            margin-right: -1em;
+        }
+    }
+
+    // 予約ボタン
+    &__item--btn {
+        margin-left: 15px;
+
+        .nav__link {
+            background-color: $text-main;
+            border-radius: 4px;
+            width: 120px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s, transform 0.3s;
+            overflow: hidden;
+
+            &:hover {
+                background-color: $accent-dark;
+                transform: translateY(-2px);
+            }
+        }
+
+        .nav__text {
+            color: $text-light;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    &__text {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        white-space: nowrap;
+        pointer-events: none;
+        transition: opacity 0.4s ease;
+        text-align: center;
+        width: 100%;
+
+        &--ja {
+            opacity: 1;
+        }
+
+        &--en {
+            opacity: 0;
+            letter-spacing: 0;
         }
     }
 

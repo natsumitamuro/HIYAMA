@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SPA RESILIENCE HIYAMA</title>
-    <link rel="shortcut icon" href="img/icon-color.png">
+    <link rel="shortcut icon" href="img/logo-b.svg">
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
@@ -16,10 +16,10 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="page-top">
+<body>
     <header class="header">
         <div class="container">
-            <h1 class="header__logo"><img src="img/logo-b.svg"></h1>
+            <h1 class="header__logo"><a href=""><img src="img/logo-b.svg"></a></h1>
 
             <div class="header__hamburger">
                 <span></span>
@@ -33,27 +33,45 @@
                 </div>
                 <ul class="nav__list">
                     <li class="nav__item">
-                        <a class="nav__link" href="">
+                        <a class="nav__link" href="#onsen">
                             <span class="nav__text nav__text--ja">赤倉温泉</span>
-                            <span class="nav__text nav__text--en">About</span>
+                            <span class="nav__text nav__text--en">Onsen</span>
                         </a>
                     </li>
                     <li class="nav__item">
-                        <a class="nav__link" href="">
+                        <a class="nav__link" href="#info">
                             <span class="nav__text nav__text--ja">施設案内</span>
                             <span class="nav__text nav__text--en">Information</span>
                         </a>
                     </li>
                     <li class="nav__item">
-                        <a class="nav__link" href="">
+                        <a class="nav__link" href="#location">
                             <span class="nav__text nav__text--ja">周辺情報</span>
                             <span class="nav__text nav__text--en">Location</span>
                         </a>
                     </li>
+                    <li class="nav__item nav__item--plan">
+                        <a class="nav__link" href="#plan">
+                            <span class="nav__text nav__text--ja">料金</span>
+                            <span class="nav__text nav__text--en">Plan</span>
+                        </a>
+                    </li>
                     <li class="nav__item">
-                        <a class="nav__link" href="">
+                        <a class="nav__link" href="#news">
                             <span class="nav__text nav__text--ja">お知らせ</span>
                             <span class="nav__text nav__text--en">News</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="#footer__info">
+                            <span class="nav__text nav__text--ja">アクセス</span>
+                            <span class="nav__text nav__text--en">Access</span>
+                        </a>
+                    </li>
+                    <li class="nav__item nav__item--btn">
+                        <a class="nav__link" href="#footer__info">
+                            <span class="nav__text nav__text--ja">ご予約</span>
+                            <span class="nav__text nav__text--en">Reservation</span>
                         </a>
                     </li>
                 </ul>
@@ -61,228 +79,457 @@
         </div>
     </header>
 
-    <div id="bg-video" class="bg-video">
-        <video src="img/main_video.mp4" autoplay loop muted playsinline></video>
-    </div>
-
-    <section id="main-visual" class="mainvisual">
-        <h1 class="logo"><img src="img/logo-h.svg"></h1>
-    </section>
-
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about__inner">
-                <p class="about__lead">
-                    傷を癒やし、<br>
-                    こころを磨く、<br>
-                    今も息づく養生の湯
-                </p>
-                <div class="about__text">
-                    <p>赤倉温泉は、西暦641年、慈覚大師円仁が湯で傷を癒す馬を見て発見したと言われる古湯です。</p>
-                    <p>その源泉の恵みを受ける地、日山の奥に、私たちの宿があります。</p>
-                    <p>
-                        聞こえるのは、風の音と、湯の流れるやさしい音だけ。</p>
-                    <p>
-                        加温・加水を一切せず、源泉かけ流し100％の湯に身を委ねるひととき、身体の奥から、こころまで静かにほどけていきます。
-                    </p>
-                </div>
-            </div>
-            <a class="btn--arrow" href="">
-                view more
-                <span class="arrow-icon"></span>
-            </a>
+    <main>
+        <div id="bg-video" class="bg-video">
+            <video src="img/main_video.mp4" autoplay loop muted playsinline></video>
         </div>
-    </section>
+        <section id="main-visual" class="mainvisual">
+            <h1 class="logo"><img src="img/logo-h.svg"></h1>
+        </section>
 
-    <section id="info" class="info">
-        <div class="bg-decor">
-            <span class="bg-decor__img bg-decor__img--wave-top"></span>
-            <span class="bg-decor__img bg-decor__img--wave-bottom"></span>
-        </div>
-        <div class="info__inner container">
-            <div class="info__content">
-                <h2 class="section-title">
-                    <span class="section-title__en">Information</span>
-                    <span class="section-title__ja">施設について</span>
-                </h2>
-                <div class="info__text">
-                    <p>和室6部屋の小さな宿です。<br>
-                        小さな宿だからこそ、ひと組ひと組の時間を大切にしています。
+        <!-- イントロ -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about__inner">
+                    <p class="about__lead fadeIn_up">
+                        傷を癒やし、<br>
+                        こころを磨く、<br>
+                        今も息づく養生の湯
                     </p>
-                    <p>
-                        シンプルな設備の中にも、心地よさには丁寧にこだわっています。<br>
-                        ぬくもりを感じながら、ゆったりとお過ごしください。
-                    </p>
+                    <div class="about__text fadeIn_up" style="transition-delay: 0.2s;">
+                        <p>赤倉温泉は、西暦641年、慈覚大師円仁が湯で傷を癒す馬を見て発見したと言われる古湯です。</p>
+                        <p>その源泉の恵みを受ける地、日山の奥に、私たちの宿があります。</p>
+                        <p>
+                            聞こえるのは、風の音と、湯の流れるやさしい音だけ。</p>
+                        <p>
+                            加温・加水を一切せず、源泉かけ流し100％の湯に身を委ねるひととき、身体の奥から、こころまで静かにほどけていきます。
+                        </p>
+                    </div>
                 </div>
-                <a class="btn--arrow" href="">
+                <!-- <a class="btn--arrow" href="about.html">
                     view more
                     <span class="arrow-icon"></span>
-                </a>
+                </a> -->
             </div>
-            <div class="info__img">
-                <img src="img/room1.jpg">
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="location" class="location">
-        <div class="bg-slider">
-            <div data-index="0" class="bg-slider__item"></div>
-            <div data-index="1" class="bg-slider__item"></div>
-            <div data-index="2" class="bg-slider__item"></div>
-            <div data-index="3" class="bg-slider__item"></div>
-        </div>
-
-        <div class="location__content container">
-            <div class="location__text">
-                <h2 class="section-title">
-                    <span class="section-title__en">Location</span>
-                    <span class="section-title__ja">周辺情報</span>
-                </h2>
-                <div class="location__text__desc">
-                    <p>赤倉温泉は山形と宮城の県境に位置しており、お隣 宮城県へのアクセスも抜群です。</p>
-                    <p>冬は白銀のパウダースノーが舞う赤倉温泉スキー場までは車で5分ほどです。 新緑や紅葉の季節には、県境を越えた鳴子峡へも軽やかに足を延ばせます。</p>
-                    <p>当館を拠点に、山形や宮城の観光をお楽しみください。</p>
+        <!-- 赤倉温泉 -->
+        <section id="onsen" class="onsen">
+            <div class="onsen__sticky">
+                <div class="container">
+                    <div class="onsen__inner fadeIn_up">
+                        <div class="onsen__media">
+                            <img class="onsen__img is-active" src="img/onsen3.jpg">
+                            <img class="onsen__img" src="img/onsen4.jpg">
+                            <img class="onsen__img" src="img/onsen5.jpg">
+                        </div>
+                        <div class="onsen__right">
+                            <div class="onsen__intro">
+                                <h2 class="section-title fadeIn_up">
+                                    <span class="section-title__en">Onsen</span>
+                                    <span class="section-title__ja">温泉について</span>
+                                </h2>
+                                <p class="onsen__lead fadeIn_up">
+                                    自家源泉から湧き出る湯を、そのまま湯舟へ注いでいます。<br>
+                                    個別風呂を中心に、落ち着いた湯の時間をご用意しています。
+                                </p>
+                            </div>
+                            <ul class="onsen__content fadeIn_up">
+                                <li class="onsen__item is-active">
+                                    <h3 class="onsen__item-title">個別風呂</h3>
+                                    <p class="onsen__text">
+                                        2つの個室風呂を備えており、貸し切りにてご利用いただけます。<br>
+                                        プライベートな空間で、源泉かけ流しの湯をお愉しみください。
+                                    </p>
+                                </li>
+                                <li class="onsen__item">
+                                    <h3 class="onsen__item-title">露天風呂</h3>
+                                    <p class="onsen__text">
+                                        2つの個室風呂のうち、1つは露天風呂がついております。<br>
+                                        四季折々に表情を変える景色を間近に感じながら、心解きほぐれる休息をお過ごしいただけます。
+                                    </p>
+                                </li>
+                                <li class="onsen__item">
+                                    <h3 class="onsen__item-title">大浴場(隣接施設)</h3>
+                                    <p class="onsen__text">
+                                        隣接する施設の大浴場もご利用いただけます。<br>
+                                        開放感あふれる湯舟で、ゆったりとお楽しみください。<br>
+                                        <span class="onsen__remark">※ご利用は当該施設の営業に準じており、休館日の際はご利用いただけません。</span>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <a class="btn--arrow" href="">
-                    view more
-                    <span class="arrow-icon"></span>
-                </a>
             </div>
-            <ul class="location__slider">
-                <li class="location__slider__item">
-                    <img src="img/akakura-skiarea1.jpg">
-                    <h3 class="location__caption">赤倉温泉スキー場</h3>
-                </li>
-                <li class="location__slider__item">
-                    <img src="img/ginzan1.jpg">
-                    <h3 class="location__caption">銀山温泉</h3>
-                </li>
-                <li class="location__slider__item">
-                    <img src="img/hunakudari1.jpg">
-                    <h3 class="location__caption">最上川舟下り</h3>
-                </li>
-                <li class="location__slider__item">
-                    <img src="img/narukokyou1.jpg">
-                    <h3 class="location__caption">鳴子峡</h3>
-                </li>
-            </ul>
-        </div>
-    </section>
+        </section>
 
-    <section id="news" class="news">
-        <div class="news__inner container">
-            <!-- ニュースメニュー -->
-            <aside class="news__side">
-                <h2 class="section-title">
-                    <span class="section-title__wrap">
-                        <span class="section-title__en">News</span>
-                        <span class="section-title__ja">お知らせ</span>
-                    </span>
-                </h2>
-                <nav class="news__tabs">
-                    <button type="button" class="news__tab is-active" data-category="all">All</button>
-                    <button type="button" class="news__tab" data-category="event">イベント</button>
-                    <button type="button" class="news__tab" data-category="info">お知らせ</button>
-                </nav>
-            </aside>
+        <!-- 施設情報 -->
+        <section id="info" class="info">
+            <div class="bg-decor fadeIn_up">
+                <span class="bg-decor__img bg-decor__img--wave-top"></span>
+                <span class="bg-decor__img bg-decor__img--wave-bottom"></span>
+            </div>
+            <div class="info__inner container">
+                <div class="info__nav">
+                    <h2 class="section-title fadeIn_up">
+                        <span class="section-title__en">Information</span>
+                        <span class="section-title__ja">施設案内</span>
+                    </h2>
+                    <div class="info__lead fadeIn_up">
+                        <p>「何もない」という贅沢に浸る、静かなひととき。<br>
+                            ひと組ひと組のお客様と向き合う穏やかな時間を大切にしています。</p>
+                    </div>
+                    <ul class="info__menu fadeIn_up">
+                        <li class="info__menu-item is-active" data-target="front">フロント</li>
+                        <li class="info__menu-item" data-target="room">客室</li>
+                        <li class="info__menu-item" data-target="dining">食堂</li>
+                        <li class="info__menu-item" data-target="kitchen">自炊室</li>
+                    </ul>
+                    <!-- <a class="btn--arrow" href="info.html">
+                        view more
+                        <span class="arrow-icon"></span>
+                    </a> -->
+                </div>
+                <div class="info__main">
+                    <div id="front" class="info__panel is-active">
+                        <div class="info__img-box fadeIn_up">
+                            <img src="img/hiyama-front.jpg">
+                            <img src="img/hiyama-front2.jpg">
+                        </div>
+                        <p class="info__text fadeIn_up">
+                            木の温もりに包まれたフロントでは、お客様を家族のようにお迎えいたします。<br>
+                            周辺の散策路や季節の見どころなど、小さな宿ならではの目線でご案内いたします。
+                        </p>
+                    </div>
+                    <div id="room" class="info__panel">
+                        <div class="info__img-box">
+                            <img src="img/room1.jpg">
+                            <img src="img/room2.jpg">
+                        </div>
+                        <p class="info__text">
+                            窓を開ければ、豊かな自然がすぐそこに。<br>
+                            時には小さな虫たちが顔を出しますが、それもまた山と共に生きるこの宿の日常です。
+                        </p>
+                        <dl class="info__spec">
+                            <div class="info__spec-item">
+                                <dt>客室</dt>
+                                <dd>和室 6室</dd>
+                            </div>
+                            <div class="info__spec-item">
+                                <dt>寝具</dt>
+                                <dd>布団</dd>
+                            </div>
+                            <div class="info__spec-item">
+                                <dt>定員</dt>
+                                <dd>1〜5名</dd>
+                            </div>
+                            <div class="info__spec-item">
+                                <dt>アメニティ</dt>
+                                <dd>浴衣、バスタオル、歯ブラシ、カミソリ、コーム</dd>
+                            </div>
+                        </dl>
+                    </div>
+                    <div id="dining" class="info__panel">
+                        <div class="info__img-box">
+                            <img src="img/dining.jpg">
+                            <img src="img/dining2.jpg">
+                        </div>
+                        <p class="info__text">朝の光が差し込む明るい食堂。地元の農家さんが育てた新鮮な野菜や、滋味豊かな山の幸を中心に、素材の味を活かした朝食をご用意します。</p>
+                    </div>
+                    <div id="kitchen" class="info__panel">
+                        <div class="info__img-box">
+                            <img src="img/hiyama-front.jpg">
+                            <img src="img/hiyama-front2.jpg">
+                        </div>
+                        <p class="info__text">
+                            自由にお使いいただける自炊室には、基本的な調理器具や食器を取り揃えています。<br>
+                            地元の商店で買った食材を持ち込んで、お好きな時間にご利用ください。<br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <!-- 記事 -->
-            <div class="news__content">
-                <p class="news__lead">
-                    お知らせ、イベント情報、季節のお便りなどを随時お知らせします。
-                </p>
-                <ul class="news__list">
-                    <li class="news__item" data-category="event">
-                        <div class="news__img-wrap">
-                            <img src="img/news1.jpg" alt="ニュース1" class="news__img">
-                            <span class="news__overlay">more</span>
-                        </div>
-                        <div class="news__body">
-                            <div class="news__meta">
-                                <span class="news__category">イベント</span>
-                                <time datetime="2026-01-01" class="news__date">2026.01.01</time>
-                            </div>
-                            <p class="news__text">イベントのお知らせ</p>
-                        </div>
+        <!-- 周辺情報 -->
+        <section id="location" class="location">
+            <div class="bg-slider fadeIn_up">
+                <div data-index="0" class="bg-slider__item"></div>
+                <div data-index="1" class="bg-slider__item"></div>
+                <div data-index="2" class="bg-slider__item"></div>
+                <div data-index="3" class="bg-slider__item"></div>
+            </div>
+            <div class="location__content container fadeIn_up">
+                <div class="location__text">
+                    <h2 class="section-title fadeIn_up">
+                        <span class="section-title__en">Location</span>
+                        <span class="section-title__ja">周辺情報</span>
+                    </h2>
+                    <div class="location__text__desc fadeIn_up">
+                        <p>赤倉温泉は山形と宮城の県境に位置しており、お隣 宮城県へのアクセスも抜群です。</p>
+                        <!-- <p>冬は白銀のパウダースノーが舞う赤倉温泉スキー場までは車で5分ほどです。 新緑や紅葉の季節には、県境を越えた鳴子峡へも軽やかに足を延ばせます。</p> -->
+                        <p>当館を拠点に、山形や宮城の観光をお楽しみください。</p>
+                    </div>
+                    <!-- 一時リリース用に追加▼ -->
+                    <ul class="location__text__slider fadeIn_up">
+                        <li class="location__text__slider__item">
+                            <p>冬は白銀のパウダースノーが舞う赤倉温泉スキー場までは車で5分ほどです。</p>
+                            <p>アクティビティ後の滞在にご利用ください。</p>
+                        </li>
+                        <li class="location__text__slider__item">
+                            <p>レトロな街並みが人気の銀山温泉へは車で約20分。</p>
+                            <p>情緒あふれる温泉街の散策は、日帰りでも十分満喫できます。</p>
+                        </li>
+                        <li class="location__text__slider__item">
+                            <p>最上川舟下りへは車で約50分。</p>
+                            <p>舟の上で船頭さんの話を聞きながら、最上川のゆったりとした流れを満喫できます。</p>
+                        </li>
+                        <li class="location__text__slider__item">
+                            <p>紅葉の名所として知られている鳴子峡へは車で約20分。</p>
+                            <p>当宿は県境に位置しているため宮城県へもアクセス良好です。</p>
+                        </li>
+                    </ul>
+                    <!-- 一時リリース用に追加▲ -->
+                    <!-- <a class="btn--arrow" href="location.html">
+                        view more
+                        <span class="arrow-icon"></span>
+                    </a> -->
+                </div>
+                <ul class="location__slider">
+                    <li class="location__slider__item">
+                        <img src="img/akakura-skiarea1.jpg">
+                        <h3 class="location__caption">赤倉温泉スキー場</h3>
                     </li>
-                    <li class="news__item" data-category="info">
-                        <div class="news__img-wrap">
-                            <img src="img/news2.jpg" alt="ニュース2" class="news__img">
-                            <span class="news__overlay">more</span>
-                        </div>
-                        <div class="news__body">
-                            <div class="news__meta">
-                                <span class="news__category">お知らせ</span>
-                                <time datetime="2026-01-02" class="news__date">2026.01.02</time>
-                            </div>
-                            <p class="news__text">施設のご案内</p>
-                        </div>
+                    <li class="location__slider__item">
+                        <img src="img/ginzan1.jpg">
+                        <h3 class="location__caption">銀山温泉</h3>
                     </li>
-                    <li class="news__item" data-category="event">
-                        <div class="news__img-wrap">
-                            <img src="img/akakuraonsen1.jpg" alt="ニュース3" class="news__img">
-                            <span class="news__overlay">more</span>
-                        </div>
-                        <div class="news__body">
-                            <div class="news__meta">
-                                <span class="news__category">イベント</span>
-                                <time datetime="2026-01-03" class="news__date">2026.01.03</time>
-                            </div>
-                            <p class="news__text">新プラン開始</p>
-                        </div>
+                    <li class="location__slider__item">
+                        <img src="img/hunakudari1.jpg">
+                        <h3 class="location__caption">最上川舟下り</h3>
                     </li>
-                    <li class="news__item" data-category="info">
-                        <div class="news__img-wrap">
-                            <img src="img/hunakudari1.jpg" alt="ニュース4" class="news__img">
-                            <span class="news__overlay">more</span>
-                        </div>
-                        <div class="news__body">
-                            <div class="news__meta">
-                                <span class="news__category">お知らせ</span>
-                                <time datetime="2026-01-04" class="news__date">2026.01.04</time>
-                            </div>
-                            <p class="news__text">営業時間のお知らせ</p>
-                        </div>
-                    </li>
-                    <li class="news__item" data-category="event">
-                        <div class="news__img-wrap">
-                            <img src="img/ginzan1.jpg" alt="ニュース5" class="news__img">
-                            <span class="news__overlay">more</span>
-                        </div>
-                        <div class="news__body">
-                            <div class="news__meta">
-                                <span class="news__category">イベント</span>
-                                <time datetime="2026-01-05" class="news__date">2026.01.05</time>
-                            </div>
-                            <p class="news__text">季節のイベント</p>
-                        </div>
-                    </li>
-                    <li class="news__item" data-category="info">
-                        <div class="news__img-wrap">
-                            <img src="img/akakura-skiarea1.jpg" alt="ニュース5" class="news__img">
-                            <span class="news__overlay">more</span>
-                        </div>
-                        <div class="news__body">
-                            <div class="news__meta">
-                                <span class="news__category">お知らせ</span>
-                                <time datetime="2026-01-06" class="news__date">2026.01.06</time>
-                            </div>
-                            <p class="news__text">お知らせ</p>
-                        </div>
+                    <li class="location__slider__item">
+                        <img src="img/narukokyou1.jpg">
+                        <h3 class="location__caption">鳴子峡</h3>
                     </li>
                 </ul>
-                <a class="btn--arrow" href="">
-                    view more
-                    <span class="arrow-icon"></span>
-                </a>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- 料金 -->
+        <section id="plan" class="plan">
+            <div class="plan__inner container">
+                <div class="plan__head fadeIn_up">
+                    <h2 class="section-title">
+                        <span class="section-title__en">Plan</span>
+                        <span class="section-title__ja">料金案内</span>
+                    </h2>
+                    <p class="plan__lead">
+                        お客さまのご利用目的に合わせたプランをご用意しております。
+                    </p>
+                </div>
+                <div class="plan__tabs fadeIn_up">
+                    <button class="plan__tab is-active" data-tab="stay">ご宿泊プラン</button>
+                    <button class="plan__tab" data-tab="dayuse">日帰りプラン</button>
+                </div>
+                <div class="plan__contents">
+                    <div class="plan__content is-active" data-content="stay">
+                        <table class="plan-table fadeIn_up">
+                            <tbody>
+                                <tr>
+                                    <th class="plan-table__name">素泊まり</th>
+                                    <td class="plan-table__desc">
+                                        寝具・浴衣・タオル、入浴料、自炊室使用料、諸税を含む金額です。
+                                    </td>
+                                    <td class="plan-table__price">￥4,500</td>
+                                </tr>
+                                <tr>
+                                    <th class="plan-table__name">夕食</th>
+                                    <td class="plan-table__desc">［提供時間］18:00〜20:00</td>
+                                    <td class="plan-table__price">＋￥2,500</td>
+                                </tr>
+                                <tr>
+                                    <th class="plan-table__name">朝食</th>
+                                    <td class="plan-table__desc">［提供時間］7:30〜9:00</td>
+                                    <td class="plan-table__price">＋￥1,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="plan-table__note fadeIn_up">
+                            <p class="plan-table__note-title">追加料金について</p>
+                            <ul class="plan-table__note-list fadeIn_up">
+                                <li>1室をおひとりでご利用の場合は、＋1,000円を頂戴いたします。</li>
+                                <li>ご予約なしでのご来館の場合は、基本料金の15％を追加で頂戴いたします。</li>
+                                <li>ご利用時間を超過された場合は、1時間につきお一人様1,000円を頂戴いたします。</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="plan__content" data-content="dayuse">
+                        <table class="plan-table">
+                            <tbody>
+                                <tr>
+                                    <th class="plan-table__name">入浴のみ</th>
+                                    <td class="plan-table__desc">
+                                        寝具・浴衣・タオル、入浴料、自炊室使用料、諸税を含む金額です。
+                                    </td>
+                                    <td class="plan-table__price">￥500</td>
+                                </tr>
+                                <tr>
+                                    <th class="plan-table__name">個室利用</th>
+                                    <td class="plan-table__desc">
+                                        寝具・浴衣・タオル、入浴料、自炊室使用料、諸税を含む金額です。
+                                    </td>
+                                    <td class="plan-table__price">￥3,000</td>
+                                </tr>
+                                <tr>
+                                    <th class="plan-table__name">日帰り食事</th>
+                                    <td class="plan-table__desc">
+                                        ご予約のお客様のみ対応可能です。
+                                    </td>
+                                    <td class="plan-table__price">＋￥1,000〜</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="plan-table__note">
+                            <p class="plan-table__note-title">追加料金について</p>
+                            <ul class="plan-table__note-list">
+                                <li>1室をおひとりでご利用の場合は、＋1,000円を頂戴いたします。</li>
+                                <li>ご利用時間を超過された場合は、1時間につきお一人様1,000円を頂戴いたします。</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- お知らせ -->
+        <section id="news" class="news">
+            <div class="news__inner container">
+                <!-- ニュースメニュー -->
+                <aside class="news__side fadeIn_up">
+                    <h2 class="section-title">
+                        <span class="section-title__wrap">
+                            <span class="section-title__en">News</span>
+                            <span class="section-title__ja">お知らせ</span>
+                        </span>
+                    </h2>
+                    <nav class="news__tabs">
+                        <button type="button" class="news__tab is-active" data-category="all">All</button>
+                        <button type="button" class="news__tab" data-category="event">イベント</button>
+                        <button type="button" class="news__tab" data-category="info">お知らせ</button>
+                    </nav>
+                </aside>
+                <!-- 記事 -->
+                <div class="news__content fadeIn_up">
+                    <p class="news__lead">
+                        お知らせ、イベント情報、季節のお便りなどを随時お知らせします。
+                    </p>
+                    <ul class="news__list fadeIn_up">
+                        <li class="news__item" data-category="event">
+                            <a href="">
+                                <div class="news__img-wrap">
+                                    <img src="img/news1.jpg" alt="ニュース1" class="news__img">
+                                    <span class="news__overlay">more</span>
+                                </div>
+                                <div class="news__body">
+                                    <div class="news__meta">
+                                        <span class="news__category">イベント</span>
+                                        <time datetime="2026-01-01" class="news__date">2026.01.01</time>
+                                    </div>
+                                    <p class="news__text">イベントのお知らせ</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="news__item" data-category="info">
+                            <a href="">
+                                <div class="news__img-wrap">
+                                    <img src="img/news2.jpg" alt="ニュース2" class="news__img">
+                                    <span class="news__overlay">more</span>
+                                </div>
+                                <div class="news__body">
+                                    <div class="news__meta">
+                                        <span class="news__category">お知らせ</span>
+                                        <time datetime="2026-01-02" class="news__date">2026.01.02</time>
+                                    </div>
+                                    <p class="news__text">施設のご案内</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="news__item" data-category="event">
+                            <a href="">
+                                <div class="news__img-wrap">
+                                    <img src="img/akakuraonsen1.jpg" alt="ニュース3" class="news__img">
+                                    <span class="news__overlay">more</span>
+                                </div>
+                                <div class="news__body">
+                                    <div class="news__meta">
+                                        <span class="news__category">イベント</span>
+                                        <time datetime="2026-01-03" class="news__date">2026.01.03</time>
+                                    </div>
+                                    <p class="news__text">新プラン開始</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="news__item" data-category="info">
+                            <a href="">
+                                <div class="news__img-wrap">
+                                    <img src="img/hunakudari1.jpg" alt="ニュース4" class="news__img">
+                                    <span class="news__overlay">more</span>
+                                </div>
+                                <div class="news__body">
+                                    <div class="news__meta">
+                                        <span class="news__category">お知らせ</span>
+                                        <time datetime="2026-01-04" class="news__date">2026.01.04</time>
+                                    </div>
+                                    <p class="news__text">営業時間のお知らせ</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="news__item" data-category="event">
+                            <a href="">
+                                <div class="news__img-wrap">
+                                    <img src="img/ginzan1.jpg" alt="ニュース5" class="news__img">
+                                    <span class="news__overlay">more</span>
+                                </div>
+                                <div class="news__body">
+                                    <div class="news__meta">
+                                        <span class="news__category">イベント</span>
+                                        <time datetime="2026-01-05" class="news__date">2026.01.05</time>
+                                    </div>
+                                    <p class="news__text">季節のイベント</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="news__item" data-category="info">
+                            <a href="">
+                                <div class="news__img-wrap">
+                                    <img src="img/akakura-skiarea1.jpg" alt="ニュース5" class="news__img">
+                                    <span class="news__overlay">more</span>
+                                </div>
+                                <div class="news__body">
+                                    <div class="news__meta">
+                                        <span class="news__category">お知らせ</span>
+                                        <time datetime="2026-01-06" class="news__date">2026.01.06</time>
+                                    </div>
+                                    <p class="news__text">お知らせ</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- ▼ 一時リリース用コメントアウト -->
+                    <!-- <a class="btn--arrow" href="news.html">
+                        view more
+                        <span class="arrow-icon"></span>
+                    </a> -->
+                    <!-- ▲ 一時リリース用コメントアウト -->
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer class="footer">
         <div class="container">
-            <a href="" class="footer__hero">
+            <a href="" class="footer__hero fadeIn_up">
                 <img class="footer__hero-img" src="img/akakuraonsen1.jpg">
                 <div class="footer__hero-text">
                     <span class="footer__text--ja">ご予約</span>
@@ -290,7 +537,7 @@
                 </div>
             </a>
 
-            <div class="footer__info">
+            <div id="footer__info" class="footer__info fadeIn_up" style="transition-delay: 0.2s;">
                 <div class="footer__profile">
                     <div class="footer__logo">
                         <a href="">
@@ -332,7 +579,7 @@
                 </ul>
             </div>
         </div>
-        <div class="footer__bottom">
+        <div class="footer__bottom fadeIn_up">
             <div class="footer__bottom-main">
                 <div class="footer__sns">
                     <div class="footer__icon">
@@ -351,27 +598,39 @@
                 <nav class="nav nav--footer">
                     <ul class="nav__list">
                         <li class="nav__item">
-                            <a class="nav__link" href="">
+                            <a class="nav__link" href="#onsen">
                                 <span class="nav__text nav__text--ja">赤倉温泉</span>
-                                <span class="nav__text nav__text--en">About</span>
+                                <span class="nav__text nav__text--en">Onsen</span>
                             </a>
                         </li>
                         <li class="nav__item">
-                            <a class="nav__link" href="">
+                            <a class="nav__link" href="#info">
                                 <span class="nav__text nav__text--ja">施設案内</span>
                                 <span class="nav__text nav__text--en">Information</span>
                             </a>
                         </li>
                         <li class="nav__item">
-                            <a class="nav__link" href="">
+                            <a class="nav__link" href="#location">
                                 <span class="nav__text nav__text--ja">周辺情報</span>
                                 <span class="nav__text nav__text--en">Location</span>
                             </a>
                         </li>
+                        <li class="nav__item nav__item--plan">
+                            <a class="nav__link" href="#plan">
+                                <span class="nav__text nav__text--ja">料金</span>
+                                <span class="nav__text nav__text--en">Plan</span>
+                            </a>
+                        </li>
                         <li class="nav__item">
-                            <a class="nav__link" href="">
+                            <a class="nav__link" href="#news">
                                 <span class="nav__text nav__text--ja">お知らせ</span>
                                 <span class="nav__text nav__text--en">News</span>
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#footer__info">
+                                <span class="nav__text nav__text--ja">アクセス</span>
+                                <span class="nav__text nav__text--en">Access</span>
                             </a>
                         </li>
                     </ul>
@@ -384,6 +643,7 @@
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="js/main.js"></script>
 </body>

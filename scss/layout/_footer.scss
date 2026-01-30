@@ -159,7 +159,8 @@ footer
         cursor: pointer;
 
         &:hover {
-            background: #E5DDD3;
+            background-color: $accent-light;
+            color: $text-light;
             box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
         }
 
@@ -189,18 +190,24 @@ footer
         }
 
         &.is-open {
+            background-color: $accent-dark;
+            color: $text-light;
+
             &::before {
                 transform: translateY(-50%) rotate(-90deg);
+
             }
         }
     }
 
     &__access-childmenu {
         display: none;
+        padding-top: 5px;
     }
 
     // === SNS/nav ===
     &__bottom {
+        margin-top: 20px;
         padding: 20px 0;
         background-color: #E5DDD3;
         text-align: center;

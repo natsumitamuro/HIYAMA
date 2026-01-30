@@ -4,584 +4,1124 @@
 /*-------------------------------------------
 Topページ
 -------------------------------------------*/
-.page-top {
-
-    /*-------------------------------------------
+/*-------------------------------------------
 mainvisual
 -------------------------------------------*/
-    .mainvisual {
-        position: relative;
+.mainvisual {
+    position: relative;
 
-        .logo {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            transition: opacity 0.2s linear;
-            z-index: -90;
-        }
+    .logo {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: opacity 0.2s linear;
+        z-index: -90;
     }
+}
 
-    /*-------------------------------------------
+/*-------------------------------------------
 about
 -------------------------------------------*/
-    .about {
-        position: relative;
-        color: $text-light;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+.about {
+    position: relative;
+    color: $text-light;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0.9));
+    --link-color: #{$text-light};
+
+    // 次セクションへのグラデーション
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        pointer-events: none;
         background: linear-gradient(to bottom,
-                rgba(0, 0, 0, 0),
-                rgba(0, 0, 0, 0.9));
-        --link-color: #{$text-light};
+                rgba(253, 251, 248, 0),
+                $bg-base );
+    }
 
-        // 次セクションへのグラデーション
-        &::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            pointer-events: none;
-            background: linear-gradient(to bottom,
-                    rgba(253, 251, 248, 0),
-                    $bg-base );
-        }
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 40px;
+    }
 
-        .container {
-            display: flex;
+    &__inner {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 60px;
+
+        @include m.sp {
             flex-direction: column;
-            align-items: flex-end;
-            gap: 40px;
-        }
-
-        &__inner {
-            margin-top: 30px;
-            display: flex;
-            justify-content: center;
-            gap: 60px;
-
-            @include m.sp {
-                flex-direction: column;
-                gap: 0;
-            }
-        }
-
-        &__lead {
-            font-size: $section-title;
-            text-decoration: underline;
-            text-decoration-thickness: 3px;
-            text-underline-offset: 10px;
-            line-height: 2.8;
-
-            @include m.sp {
-                line-height: 2.3;
-                font-size: 24px;
-            }
-        }
-
-        &__text {
-            width: 40%;
-            padding-top: 80px;
-
-            @include m.sp {
-                width: 100%;
-                padding-top: 50px;
-            }
-        }
-
-        &__text p {
-            padding-bottom: 20px;
-
-            @include m.sp {
-                padding-bottom: 0px;
-                line-height: 1.9;
-            }
-        }
-
-        .btn--arrow {
-            margin-right: 15%;
-
-            @include m.sp {
-                margin-right: 8%;
-            }
+            gap: 0;
         }
     }
 
-    /*-------------------------------------------
-info
--------------------------------------------*/
-    .info {
-        position: relative;
-        background: $bg-base;
-        --link-color: #{$text-main};
+    &__lead {
+        font-size: $section-title;
+        text-decoration: underline;
+        text-decoration-thickness: 3px;
+        text-underline-offset: 10px;
+        line-height: 2.8;
 
-        .bg-decor__img--wave-top {
-            top: 7%;
-            right: 0;
-            width: 50%;
-            height: 20%;
-
-            @include m.tab {
-                top: 15%;
-                width: 75%;
-            }
-
-            @include m.sp {
-                top: 5%;
-                width: 75%;
-            }
+        @include m.sp {
+            line-height: 2.3;
+            font-size: 24px;
         }
+    }
 
-        .bg-decor__img--wave-bottom {
-            bottom: 3%;
-            left: 0;
-            width: 80%;
-            height: 20%;
+    &__text {
+        width: 40%;
+        padding-top: 80px;
 
-            @include m.sp {
-                bottom: 4%;
-                left: 0;
-                width: 80%;
-                height: 5%;
-            }
-        }
-
-        &__inner {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
+        @include m.sp {
             width: 100%;
-
-            @include m.tab {
-                gap: 50px;
-            }
-
-            @include m.sp {
-                flex-direction: column;
-                gap: 0;
-            }
+            padding-top: 50px;
         }
+    }
 
-        &__content {
-            display: flex;
-            flex-direction: column;
-            width: 48%;
+    &__text p {
+        padding-bottom: 20px;
 
-            @include m.tab {
-                width: 60%;
-            }
-
-            @include m.sp {
-                display: contents;
-            }
+        @include m.sp {
+            padding-bottom: 10px;
         }
+    }
 
-        .section-title {
-            @include m.sp {
-                order: 1;
-            }
-        }
+    .btn--arrow {
+        margin-right: 15%;
 
-        &__text {
-            margin-bottom: 40px;
-
-            @include m.tab {
-                margin-bottom: 15px;
-            }
-
-            @include m.sp {
-                order: 3;
-                margin-top: 10px;
-                margin-bottom: 0px;
-            }
-        }
-
-        &__text p {
-            padding-bottom: 15px;
-        }
-
-        .btn--arrow {
-            margin-left: auto;
+        @include m.sp {
             margin-right: 8%;
-            color: $text-main;
-
-            @include m.sp {
-                order: 4;
-            }
-        }
-
-        &__img {
-            z-index: 2;
-            width: 42%;
-
-            @include m.sp {
-                order: 2;
-                width: calc(100% + 40px);
-                margin-inline: -20px;
-            }
         }
     }
+}
 
-    /*-------------------------------------------
-location
+/*-------------------------------------------
+onsen
 -------------------------------------------*/
-    .location {
-        color: #fff;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-        padding-top: 0;
-        --link-color: #fff;
+.onsen {
+    position: relative;
+    display: block;
+    min-height: auto;
+    background: $bg-base;
+    height: calc(100vh * 4);
 
-        // 背景スライダー
-        position: relative;
-        height: 100vh;
-        overflow: hidden;
-
-        .bg-slider {
-            position: absolute;
-            inset: 0;
-            z-index: 0;
-            height: 100%;
-            background: #000;
-        }
-
-        .bg-slider__item {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            filter: blur(9px) brightness(0.82);
-
-            transform: scale(1.1);
-            opacity: 0;
-            transition: opacity 1.2s ease;
-
-            &.is-active {
-                opacity: 1;
-            }
-        }
-
-        &__content {
-            position: relative;
-            z-index: 1;
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            height: 100%;
-
-            @include m.sp {
-                flex-direction: column;
-            }
-        }
-
-        &__text {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            width: 45%;
-
-            @include m.sp {
-                display: contents;
-                width: 100%;
-            }
-        }
-
-        .section-title {
-            @include m.sp {
-                order: 1;
-            }
-        }
-
-        .section-title__ja {
-            color: currentColor;
-        }
-
-        &__text__desc {
-            @include m.sp {
-                order: 3;
-                margin-top: 10px;
-            }
-        }
-
-        &__text__desc p {
-            margin-bottom: 15px;
-        }
-
-        .btn--arrow {
-            margin-top: 40px;
-            margin-left: auto;
-
-            @include m.sp {
-                order: 4;
-                padding-top: 0;
-                margin-right: 8%;
-            }
-        }
-
-        &__slider {
-            width: 42%;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-
-            @include m.sp {
-                order: 2;
-                width: 100%;
-                height: 35%;
-            }
-        }
-
-        .slick-list,
-        .slick-track,
-        &__slider__item {
-            height: 100%;
-        }
-
-        &__slider__item {
-            position: relative;
-        }
-
-        &__slider__item img {
-            display: block;
-        }
-
-        .location__caption {
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 15%;
-            margin: 0;
-            height: 60px;
-            padding-top: 5px;
-
-            color: $text-main;
-            text-shadow: none;
-            text-align: center;
-            font-size: 30px;
-
-            background: #fff;
-            outline: 2px solid $accent-dark;
-            outline-offset: -6px;
-
-            @include m.tab {
-                padding-top: 10px;
-                font-size: 24px;
-            }
-
-            @include m.sp {
-                bottom: 3%;
-                height: 40px;
-                padding-top: 7px;
-                font-size: 16px;
-            }
-        }
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        z-index: 1;
+        pointer-events: none;
+        background: linear-gradient(to bottom,
+                $bg-base,
+                $bg-sub );
     }
 
-    /*-------------------------------------------
-news
--------------------------------------------*/
-    .news {
-        background: $bg-base;
-        --link-color: #{$text-main};
 
-        &__inner {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            padding-block: 80px;
+    &__sticky {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        // height: 100vh;
+        // display: flex;
+        // align-items: center;
+        // justify-content: center;
+        z-index: 2;
 
-            @include m.sp {
-                flex-direction: column;
-            }
-        }
+    }
 
-        // ===== サイドバー =====
-        &__side {
-            width: 250px;
-            border-right: 1px solid $accent-dark;
-            margin-right: 40px;
+    .container {
+        min-height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-            @include m.sp {
-                display: contents;
-                width: 100%;
-                border-right: none;
-            }
-        }
 
-        .section-title {
-            @include m.sp {
-                order: 1;
-            }
-        }
+    &__inner {
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
 
-        &__tabs {
-            margin-top: 50px;
-            display: flex;
+        @include m.tab {
             flex-direction: column;
-            align-items: flex-start;
-            gap: 15px;
-
-            @include m.sp {
-                order: 3;
-                flex-direction: row;
-                // justify-content: flex-end;
-                margin-top: 0;
-                margin-bottom: 30px;
-                padding-top: 10px;
-                border-top: 1px solid $accent-dark ;
-
-            }
-        }
-
-        &__tab {
-            width: 130px;
-            padding: 8px;
-            background: $bg-sub;
-            color: $text-main;
-            border-radius: 9999px;
-            cursor: pointer;
-            transition: background-color 0.25s ease, color 0.25s ease;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
-
-            &:hover {
-                background: $accent-light;
-                color: $text-main;
-                box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-            }
-
-            &.is-active {
-                background: $accent-dark;
-                color: #fff;
-                box-shadow: none;
-            }
-        }
-
-        // ===== 記事 =====
-        &__content {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            margin-top: 30px;
-
-            @include m.sp {
-                display: contents;
-            }
-        }
-
-        &__lead {
-            padding-bottom: 30px;
-
-            @include m.sp {
-                order: 2;
-                padding-bottom: 10px;
-            }
-        }
-
-        &__list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            min-height: 600px;
             align-items: start;
+        }
+    }
 
-            @include m.sp {
-                order: 4;
-                min-height: auto;
-            }
+    &__media {
+        flex-shrink: 0;
+        position: relative;
+        width: 710px;
+        height: 530px;
+
+        @include m.tab {
+            width: 500px;
+            height: 300px;
         }
 
-        // ===== リスト内容 =====
-        &__item {
+        @include m.sp {
             width: 100%;
-            background: #fff;
-            border-radius: 5px;
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
-            overflow: hidden;
-            letter-spacing: 0;
-            transition: opacity 0.3s ease;
-
-            &.is-fade-out {
-                opacity: 0;
-                transform: translateY(5px);
-            }
-
-            &.is-hidden {
-                display: none;
-            }
-
-            &.is-fade-in {
-                display: block;
-                opacity: 0;
-                transform: translateY(5px);
-            }
         }
+    }
 
-        &__img-wrap {
-            position: relative;
-            overflow: hidden;
-        }
+    &__img {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transition: opacity 0.6s ease;
 
-        &__img {
-            height: 200px;
-        }
-
-        &__overlay {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            letter-spacing: 0.12em;
-            font-weight: bold;
-            color: #fff;
-
-            background: rgba(0, 0, 0, 0.5);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        &__body {
-            min-height: 70px;
-            padding: 5px 10px 16px;
-        }
-
-        &__meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-            font-size: 11px;
-        }
-
-        &__category {
-            padding: 3px 8px;
-            border: 1px solid currentColor;
-            border-radius: 9px;
-            color: #BCAD7D;
-        }
-
-        &__text {
-            margin-top: 5px;
-            font-size: 16px;
-            font-weight: bold;
-        }
-
-        .btn--arrow {
-            margin-top: 40px;
-            margin-left: auto;
-            margin-right: 4%;
-
-            @include m.sp {
-                order: 5;
-            }
-        }
-
-        // ===== hover時 =====
-        &__item:hover &__overlay {
+        &.is-active {
             opacity: 1;
         }
+    }
+
+    &__right {
+        width: 48%;
+        margin-left: -60px;
+        margin-bottom: -70px;
+        display: flex;
+        flex-direction: column;
+        background: $bg-sub;
+        padding: 50px 20px 50px 90px;
+
+        @include m.tab {
+            width: 70%;
+            margin: -50px 0 50px auto;
+            padding: 70px 20px 30px 30px;
+        }
+
+        @include m.sp {
+            width: 100%;
+            padding-inline: 20px;
+        }
+    }
+
+    .section-title {
+        display: flex;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+
+        @include m.tab {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+        }
+    }
+
+    .section-title__en {
+        margin-right: 20px;
+    }
+
+    &__intro {
+        margin-bottom: 60px;
+
+        @include m.tab {
+            margin-bottom: 25px;
+        }
+    }
+
+
+    &__item {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.8s ease, transform 0.8s ease;
+        transform: translateY(10px);
+        margin-top: auto;
+
+        &.is-active {
+            display: block;
+            position: relative; // アクティブなものだけ高さを保持する
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+    }
+
+    &__item-title {
+        font-size: 24px;
+
+        @include m.sp {
+            font-size: 20px;
+        }
+    }
+}
+
+/*-------------------------------------------
+info
+-------------------------------------------*/
+.info {
+    position: relative;
+    background: $bg-sub;
+    --link-color: #{$text-main};
+
+    .bg-decor__img--wave-top {
+        top: 7%;
+        right: 0;
+        width: 50%;
+        height: 20%;
+
+        @include m.tab {
+            top: 15%;
+            width: 75%;
+        }
+
+        @include m.sp {
+            top: 5%;
+            width: 75%;
+        }
+    }
+
+    .bg-decor__img--wave-bottom {
+        bottom: 3%;
+        left: 0;
+        width: 80%;
+        height: 20%;
+
+        @include m.sp {
+            bottom: 2%;
+            left: 0;
+            width: 80%;
+            height: 5%;
+        }
+    }
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        z-index: 10;
+
+        @include m.tab {
+            gap: 50px;
+        }
+
+        @include m.sp {
+            flex-direction: column;
+            gap: 5px;
+        }
+    }
+
+    &__nav {
+        width: 48%;
+
+        @include m.sp {
+            width: 100%;
+        }
+    }
+
+    .section-title {
+        margin-bottom: 20px;
+    }
+
+
+    &__menu {
+        margin-top: 40px;
+
+        @include m.sp {
+            display: flex;
+            gap: 5px;
+            margin-top: 30px;
+            border-bottom: 2px solid $accent-dark;
+        }
+    }
+
+    &__menu-item {
+        width: 40%;
+        cursor: pointer;
+        padding: 15px 10px;
+        border-bottom: 1px solid $accent-dark;
+        transition: all 0.3s;
+        opacity: 0.6;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include m.sp {
+            width: auto;
+            flex: 1;
+            justify-content: center;
+            border: 1px solid $accent-dark;
+            border-bottom: none;
+            padding: 10px 5px;
+            font-size: 14px;
+            border-radius: 8px 8px 0 0;
+            margin-bottom: 0;
+        }
+
+        &::after {
+            content: "→";
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 40px;
+            height: 20px;
+            border: 1px solid $accent-dark;
+            border-radius: 9999px;
+            color: $accent-dark;
+            transition: all 0.3s ease;
+            line-height: 1;
+            text-indent: 3px;
+
+            @include m.sp {
+                display: none;
+            }
+        }
+
+        &.is-active {
+            font-weight: bold;
+            opacity: 1;
+
+            &::after {
+                background-color: $accent-dark;
+                border: none;
+                color: $text-light;
+                font-weight: bold;
+            }
+
+            @include m.sp {
+                background-color: $accent-dark;
+                color: $text-light;
+            }
+
+        }
+
+        &:hover:not(.is-active) {
+            background: $accent-light;
+            color: $text-light;
+            opacity: 0.8;
+
+            &::after {
+                border-color: $text-light;
+                color: $text-light;
+            }
+        }
+    }
+
+    &__main {
+        width: 45%;
+        position: relative;
+        min-height: 600px;
+
+
+        @include m.sp {
+            width: 100%;
+            min-height: auto;
+        }
+    }
+
+    &__panel {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.5s ease;
+        pointer-events: none;
+        // display: none;
+        // animation: fadeIn 0.5s;
+
+        &.is-active {
+            // display: block;
+            position: relative;
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+    }
+
+    &__img-box {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        aspect-ratio: 4 / 3;
+    }
+
+    &__img-box img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        // object-position: bottom;
+
+        &:nth-child(2) {
+            animation: imageSwitch 10s infinite;
+        }
+    }
+
+    &__text {
+        margin-top: 10px;
+    }
+
+    &__spec {
+        margin-top: 24px;
+        border-block: 1px solid $text-main;
+        font-size: 14px;
+    }
+
+    &__spec-item {
+        display: flex;
+
+        &:not(:last-child) {
+            border-bottom: 1px dotted $text-main;
+        }
+
+        @include m.sp {
+            flex-direction: column;
+        }
+    }
+
+    dt {
+        width: 110px;
+        padding: 3px 10px;
+        border-right: 1px dotted $text-main;
+
+        @include m.sp {
+            width: 100%;
+            padding-bottom: 0;
+            border-right: none;
+            font-weight: bold;
+        }
+    }
+
+    dd {
+        padding: 3px 10px;
+        margin: 0;
+
+        @include m.sp {
+            padding-top: 0;
+        }
+    }
+
+    @keyframes imageSwitch {
+
+        0%,
+        15%,
+        85%,
+        100% {
+            opacity: 0;
+        }
+
+        // 0〜15%の間は透明
+        35%,
+        65% {
+            opacity: 1;
+        }
+
+        // 35〜65%の間は表示
+    }
+
+    // &__content {
+    //     display: flex;
+    //     flex-direction: column;
+    //     width: 48%;
+
+    //     @include m.tab {
+    //         width: 60%;
+    //     }
+
+    //     @include m.sp {
+    //         display: contents;
+    //     }
+    // }
+
+    // .section-title {
+    //     @include m.sp {
+    //         order: 1;
+    //     }
+    // }
+
+    // &__text {
+    //     margin-bottom: 40px;
+
+    //     @include m.tab {
+    //         margin-bottom: 15px;
+    //     }
+
+    //     @include m.sp {
+    //         order: 3;
+    //         margin-top: 10px;
+    //         margin-bottom: 0px;
+    //     }
+    // }
+
+    // &__text p {
+    //     padding-bottom: 15px;
+    // }
+
+    // .btn--arrow {
+    //     margin-left: auto;
+    //     margin-right: 8%;
+    //     color: $text-main;
+
+    //     @include m.sp {
+    //         order: 4;
+    //     }
+    // }
+
+    // &__img {
+    //     z-index: 2;
+    //     width: 42%;
+
+    //     @include m.sp {
+    //         order: 2;
+    //         width: calc(100% + 40px);
+    //         margin-inline: -20px;
+    //     }
+    // }
+}
+
+/*-------------------------------------------
+location
+-------------------------------------------*/
+.location {
+    color: #fff;
+    background: $bg-sub;
+
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    padding-top: 0;
+    --link-color: #fff;
+
+    // 背景スライダー
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+
+    .bg-slider {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        height: 100%;
+        background: #000;
+    }
+
+    .bg-slider__item {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        filter: blur(9px) brightness(0.82);
+
+        transform: scale(1.1);
+        opacity: 0;
+        transition: opacity 1.2s ease;
+
+        &.is-active {
+            opacity: 1;
+        }
+    }
+
+    &__content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+
+        @include m.sp {
+            flex-direction: column;
+            height: auto; // 一時リリース用に追加
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 45%;
+
+        @include m.sp {
+            display: contents;
+            width: 100%;
+        }
+    }
+
+    .section-title {
+        margin-bottom: 20px; // 一時リリース用追加
+
+        @include m.sp {
+            order: 1;
+        }
+    }
+
+    .section-title__ja {
+        color: currentColor;
+    }
+
+    &__text__desc {
+        @include m.sp {
+            // order: 3;    // 一時リリース用に変更
+            order: 2;
+            margin-bottom: 20px;
+        }
+    }
+
+    &__text__desc p {
+        margin-bottom: 15px;
+
+        @include m.sp {
+            margin-bottom: 5px;
+        }
+    }
+
+    // ▼ 一時リリース用
+    &__text__slider {
+        position: relative;
+        margin-top: 20px;
+        min-height: 120px;
+        padding: 0;
+        list-style: none;
+
+        @include m.sp {
+            order: 4;
+        }
+    }
+
+    &__text__slider__item {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        padding-top: 60px;
+        opacity: 0;
+        transition: opacity 0.8s ease;
+        pointer-events: none;
+
+        &.is-active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        @include m.sp {
+            padding-top: 0;
+        }
+    }
+
+    &__text__slider__item p {
+        margin-bottom: 15px;
+
+        @include m.sp {
+            margin-bottom: 5px;
+        }
+    }
+
+    // .btn--arrow {
+    //     margin-top: 40px;
+    //     margin-left: auto;
+
+    //     @include m.sp {
+    //         order: 4;
+    //         padding-top: 0;
+    //         margin-right: 8%;
+    //     }
+    // }
+    // ▲ 一時リリース用
+
+    &__slider {
+        width: 42%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+
+        @include m.sp {
+            // order: 2;    // 一時リリース用に変更
+            order: 3;
+            width: 100%;
+            height: 35%;
+        }
+    }
+
+    .slick-list,
+    .slick-track,
+    &__slider__item {
+        height: 100%;
+    }
+
+    &__slider__item {
+        position: relative;
+    }
+
+    &__slider__item img {
+        display: block;
+    }
+
+    .location__caption {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 15%;
+        margin: 0;
+        height: 60px;
+        padding-top: 5px;
+
+        color: $text-main;
+        text-shadow: none;
+        text-align: center;
+        font-size: 30px;
+
+        background: #fff;
+        outline: 2px solid $accent-dark;
+        outline-offset: -6px;
+
+        @include m.tab {
+            padding-top: 10px;
+            font-size: 24px;
+        }
+
+        @include m.sp {
+            bottom: 3%;
+            height: 40px;
+            padding-top: 7px;
+            font-size: 16px;
+        }
+    }
+}
+
+/*-------------------------------------------
+plan
+-------------------------------------------*/
+.plan {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background: $bg-sub;
+    position: relative;
+
+    @include m.sp {
+        height: auto;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        pointer-events: none;
+        background: linear-gradient(to bottom, $bg-sub, $bg-base);
+    }
+
+    &__inner {
+        position: relative;
+        z-index: 2;
+    }
+
+    &__head {
+        display: flex;
+        align-items: flex-end;
+        margin-bottom: 60px;
+        width: 100%;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+
+        @include m.sp {
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+    }
+
+    .section-title {
+        margin: 0 50px 0 0;
+        padding-bottom: 0;
+        line-height: 1;
+        border-bottom: none;
+
+        @include m.sp {
+            margin-right: 0;
+        }
+    }
+
+    &__lead {
+        margin-bottom: 0;
+        line-height: 1.5;
+        opacity: 0.8;
+    }
+
+    &__tabs {
+        display: flex;
+        gap: 10px;
+        margin: 60px 0 0 0;
+    }
+
+    &__tab {
+        border: 1px solid $accent-dark;
+        border-bottom: none;
+        padding: 12px 30px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.3s;
+        border-radius: 8px 8px 0 0;
+        color: $text-main;
+        opacity: 0.6;
+
+        &.is-active {
+            background: $accent-dark;
+            opacity: 1;
+            color: $text-light;
+            font-weight: 600;
+        }
+
+        &:hover:not(.is-active) {
+            background: $accent-light;
+            color: $text-light;
+            opacity: 0.8;
+        }
+    }
+
+    &__contents {
+        width: 100%;
+        max-width: 900px;
+        min-height: 350px;
+        margin: 0 auto;
+
+        @include m.sp {
+            min-height: auto; // 高さ固定を解除
+        }
+    }
+
+    &__content {
+        display: none;
+        opacity: 0;
+
+        &.is-active {
+            display: block;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+    }
+}
+
+/*-------------------------------------------
+news
+-------------------------------------------*/
+.news {
+    background: $bg-base;
+    --link-color: #{$text-main};
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding-block: 80px;
+
+        @include m.sp {
+            flex-direction: column;
+        }
+    }
+
+    // ===== サイドバー =====
+    &__side {
+        width: 250px;
+        border-right: 1px solid $accent-dark;
+        margin-right: 40px;
+
+        @include m.sp {
+            display: contents;
+            width: 100%;
+            border-right: none;
+        }
+    }
+
+    .section-title {
+        border-bottom: none;
+
+        @include m.sp {
+            order: 1;
+        }
+    }
+
+    &__tabs {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+
+        @include m.sp {
+            order: 3;
+            flex-direction: row;
+            // justify-content: flex-end;
+            margin-top: 0;
+            margin-bottom: 30px;
+            padding-top: 10px;
+            border-top: 1px solid $accent-dark ;
+
+        }
+    }
+
+    &__tab {
+        width: 130px;
+        padding: 8px;
+        background: $bg-sub;
+        color: $text-main;
+        border-radius: 9999px;
+        cursor: pointer;
+        transition: background-color 0.25s ease, color 0.25s ease;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+
+        &:hover {
+            background: $accent-light;
+            color: $text-main;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        &.is-active {
+            background: $accent-dark;
+            color: #fff;
+            box-shadow: none;
+        }
+    }
+
+    // ===== 記事 =====
+    &__content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 30px;
+
+        @include m.sp {
+            display: contents;
+        }
+    }
+
+    &__lead {
+        padding-bottom: 30px;
+
+        @include m.sp {
+            order: 2;
+            padding-bottom: 10px;
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        min-height: 600px;
+        align-items: start;
+
+        @include m.sp {
+            order: 4;
+            min-height: auto;
+        }
+    }
+
+    // ===== リスト内容 =====
+    &__item {
+        width: 100%;
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+        overflow: hidden;
+        letter-spacing: 0;
+        transition: opacity 0.3s ease;
+
+        &.is-fade-out {
+            opacity: 0;
+            transform: translateY(5px);
+        }
+
+        &.is-hidden {
+            display: none;
+        }
+
+        &.is-fade-in {
+            display: block;
+            opacity: 0;
+            transform: translateY(5px);
+        }
+    }
+
+    &__img-wrap {
+        position: relative;
+        overflow: hidden;
+    }
+
+    &__img {
+        height: 200px;
+    }
+
+    &__overlay {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        letter-spacing: 0.12em;
+        font-weight: bold;
+        color: #fff;
+
+        background: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    &__body {
+        min-height: 70px;
+        padding: 5px 10px 16px;
+    }
+
+    &__meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        font-size: 11px;
+    }
+
+    &__category {
+        padding: 3px 8px;
+        border: 1px solid currentColor;
+        border-radius: 9px;
+        color: #BCAD7D;
+    }
+
+    &__text {
+        margin-top: 5px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .btn--arrow {
+        margin-top: 40px;
+        margin-left: auto;
+        margin-right: 4%;
+
+        @include m.sp {
+            order: 5;
+        }
+    }
+
+    // ===== hover時 =====
+    &__item:hover &__overlay {
+        opacity: 1;
     }
 }
