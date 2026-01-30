@@ -399,6 +399,7 @@ base
 -------------------------------------------*/
 body {
   color: #2b5446;
+  font-family: "Noto Sans JP", sans-serif;
   line-height: 1.6;
   letter-spacing: 0.2em;
 }
