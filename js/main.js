@@ -2,8 +2,19 @@ $(function () {
     // =========================
     // ハンバーガーメニュー
     // =========================
-    $(".header__hamburger").on("click", function () {
+    $(".header__hamburger").on("click", function (e) {
+        e.stopPropagation();
         $(".header").toggleClass("is-open");
+    });
+
+    // nav 内リンククリックで閉じる
+    $(".nav__link").on("click", function () {
+        $(".header").removeClass("is-open");
+    });
+
+    // nav 外クリックで閉じる
+    $(document).on("click", function () {
+        $(".header").removeClass("is-open");
     });
 
     // =========================
@@ -14,7 +25,7 @@ $(function () {
             $(this).addClass('is-show');
         }
     });
-    
+
     // =========================
     // スクロール関連
     // =========================
@@ -76,46 +87,55 @@ $(function () {
     // =========================
     // 1. 背景用の要素を全て取得
     const bgItems = document.querySelectorAll('.bg-slider__item');
-    // ▼ 一時リリース用に追加
     const textItems = document.querySelectorAll('.location__text__slider__item');
-    // ▲ 一時リリース用に追加
+    const progressBar = document.querySelector('.location__progress-bar');
 
-    // 2. location__slider と同じ画像を背景用にセット
+    // 背景に画像セット
     $('.location__slider img').each(function (index) {
         const src = $(this).attr('src');
-        bgItems[index].style.backgroundImage = `url(${src})`;
+        if (bgItems[index]) {
+            bgItems[index].style.backgroundImage = `url(${src})`;
+        }
     });
 
-    // 3. slick 起動時の処理
+    // slickイベント
     $('.location__slider').on(
         'init beforeChange',
         function (event, slick, currentSlide, nextSlide) {
 
-            // 1) 背景切り替え
-            const index = nextSlide !== undefined ? nextSlide : 0;
+            const rawIndex = nextSlide !== undefined ? nextSlide : 0;
+            const index = rawIndex % bgItems.length; // ← ここが肝
 
-            bgItems.forEach(item => {
-                item.classList.remove('is-active');
-            });
-            bgItems[index].classList.add('is-active');
+            // 背景切り替え
+            bgItems.forEach(item => item.classList.remove('is-active'));
+            if (bgItems[index]) {
+                bgItems[index].classList.add('is-active');
+            }
 
-            // ▼ 一時リリース用に追加
-            textItems.forEach(item => {
-                item.classList.remove('is-active');
-            });
-            textItems[index].classList.add('is-active');
-            // ▲ 一時リリース用に追加
+            // テキスト切り替え
+            textItems.forEach(item => item.classList.remove('is-active'));
+            if (textItems[index]) {
+                textItems[index].classList.add('is-active');
+            }
+
+            // プログレスバー
+            if (progressBar && slick.slideCount) {
+                const percent = ((index + 1) / slick.slideCount) * 100;
+                progressBar.style.width = percent + '%';
+            }
         }
     );
 
-    // 4. slick 起動
+    // slick起動
     $('.location__slider').slick({
         autoplay: true,
         autoplaySpeed: 5000,
         speed: 1200,
         arrows: false,
         dots: false,
-        fade: true
+        infinite: true,
+        fade: true,
+        swipe: true
     });
 
     // =========================

@@ -1132,6 +1132,7 @@ info
   position: relative;
   background: #FDFBF8;
   --link-color: #2b5446;
+  min-height: auto;
 }
 .info .bg-decor__img--wave-top {
   top: 7%;
@@ -1141,13 +1142,13 @@ info
 }
 @media screen and (max-width: 1024px) {
   .info .bg-decor__img--wave-top {
-    top: 15%;
+    top: 3%;
     width: 75%;
   }
 }
 @media screen and (max-width: 768px) {
   .info .bg-decor__img--wave-top {
-    top: 5%;
+    top: 2%;
     width: 75%;
   }
 }
@@ -1159,7 +1160,7 @@ info
 }
 @media screen and (max-width: 768px) {
   .info .bg-decor__img--wave-bottom {
-    bottom: 2%;
+    bottom: 0;
     left: 0;
     width: 80%;
     height: 5%;
@@ -1171,11 +1172,8 @@ info
   align-items: flex-start;
   width: 100%;
   z-index: 10;
-}
-@media screen and (max-width: 1024px) {
-  .info__inner {
-    gap: 50px;
-  }
+  padding-block: 100px;
+  gap: 50px;
 }
 @media screen and (max-width: 768px) {
   .info__inner {
@@ -1184,7 +1182,7 @@ info
   }
 }
 .info__nav {
-  width: 48%;
+  flex: 1;
 }
 @media screen and (max-width: 768px) {
   .info__nav {
@@ -1274,14 +1272,14 @@ info
   color: #fff;
 }
 .info__main {
-  width: 45%;
+  flex: 1;
   position: relative;
-  min-height: 600px;
+  height: 650px;
 }
 @media screen and (max-width: 768px) {
   .info__main {
     width: 100%;
-    min-height: auto;
+    height: auto;
   }
 }
 .info__panel {
@@ -1299,6 +1297,18 @@ info
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
+}
+@media screen and (max-width: 768px) {
+  .info__panel {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    display: none;
+  }
+  .info__panel.is-active {
+    display: block;
+  }
 }
 .info__img-box {
   position: relative;
@@ -1334,7 +1344,7 @@ info
   }
 }
 .info dt {
-  width: 110px;
+  width: 25%;
   padding: 3px 10px;
   border-right: 1px dotted #2b5446;
 }
@@ -1347,6 +1357,7 @@ info
   }
 }
 .info dd {
+  width: 75%;
   padding: 3px 10px;
   margin: 0;
 }
@@ -1459,7 +1470,7 @@ location
 }
 @media screen and (max-width: 768px) {
   .location__text__slider {
-    order: 4;
+    order: 5;
   }
 }
 .location__text__slider__item {
@@ -1498,8 +1509,37 @@ location
   .location__slider {
     order: 3;
     width: 100%;
-    height: 35%;
+    height: auto;
+    max-height: 60vh;
+    aspect-ratio: 4/3;
   }
+}
+.location__progress {
+  position: absolute;
+  bottom: 15%;
+  right: 70px;
+  width: 35%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  z-index: 2;
+}
+@media screen and (max-width: 768px) {
+  .location__progress {
+    position: static;
+    transform: none;
+    width: 90%;
+    margin: 20px auto 0;
+    order: 4;
+  }
+}
+.location__progress-bar {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: #fff;
+  border-radius: inherit;
+  transition: width 0.4s ease;
 }
 .location .slick-list,
 .location .slick-track, .location__slider__item {
@@ -1515,7 +1555,7 @@ location
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 15%;
+  bottom: 20%;
   margin: 0;
   height: 60px;
   padding-top: 5px;
@@ -1535,7 +1575,7 @@ location
 }
 @media screen and (max-width: 768px) {
   .location .location__caption {
-    bottom: 3%;
+    bottom: 5%;
     height: 40px;
     padding-top: 7px;
     font-size: 16px;
@@ -1710,22 +1750,24 @@ news
 .news__tab {
   width: 130px;
   padding: 8px;
-  background: #FDFBF8;
   color: #2b5446;
+  border: 1px solid #BCAD7D;
   border-radius: 9999px;
   cursor: pointer;
+  opacity: 0.6;
   transition: background-color 0.25s ease, color 0.25s ease;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
 }
-.news__tab:hover {
+.news__tab:hover:not(.is-active) {
   background: #E5DDD3;
   color: #2b5446;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 .news__tab.is-active {
   background: #BCAD7D;
+  opacity: 1;
   color: #fff;
-  box-shadow: none;
+  font-weight: 600;
 }
 .news__content {
   display: flex;
