@@ -800,12 +800,12 @@ footer
 .fadeIn_up {
   opacity: 0;
   transform: translateY(40px);
-  transition: 2s;
+  transition: 1.5s;
 }
 @media screen and (max-width: 768px) {
   .fadeIn_up {
     transform: translateY(20px);
-    transition: 0.6s ease;
+    transition: 1.5s ease;
   }
 }
 .fadeIn_up.is-show {
@@ -1051,6 +1051,9 @@ onsen
     margin-bottom: 25px;
   }
 }
+.onsen__content {
+  position: relative;
+}
 @media screen and (max-width: 768px) {
   .onsen__content {
     display: flex;
@@ -1060,8 +1063,7 @@ onsen
 }
 .onsen__item {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   opacity: 0;
   visibility: hidden;
