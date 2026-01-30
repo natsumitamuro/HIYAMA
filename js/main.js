@@ -9,16 +9,12 @@ $(function () {
     // =========================
     // フェードイン
     // =========================
-    $(function () {
-        // .fade-up クラスがついたすべての要素を監視
-        $('.fadeIn_up').on('inview', function (event, isInView) {
-            if (isInView) {
-                // 画面に入ったら .is-show クラスをつける
-                $(this).addClass('is-show');
-            }
-        });
+    $('.fadeIn_up').on('inview', function (event, isInView) {
+        if (isInView) {
+            $(this).addClass('is-show');
+        }
     });
-
+    
     // =========================
     // スクロール関連
     // =========================
@@ -212,5 +208,5 @@ $(function () {
         // urlが変化しないようにfalseを返す
         return false;
     });
-});
 
+});
