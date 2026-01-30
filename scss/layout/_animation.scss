@@ -3,11 +3,11 @@
 .fadeIn_up {
     opacity: 0;
     transform: translateY(40px);
-    transition: 2s;
+    transition: 1.5s;
 
     @include m.sp {
         transform: translateY(20px);
-        transition: .6s ease;
+        transition: 1.5s ease;
     }
 
     &.is-show {

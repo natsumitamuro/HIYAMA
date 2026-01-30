@@ -20,11 +20,26 @@ $(function () {
     // =========================
     // フェードイン
     // =========================
-    $('.fadeIn_up').on('inview', function (event, isInView) {
-        if (isInView) {
-            $(this).addClass('is-show');
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-show');
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            root: null,
+            rootMargin: '0px 0px -150px 0px',
+            threshold: 0
         }
+    );
+
+    document.querySelectorAll('.fadeIn_up').forEach(el => {
+        observer.observe(el);
     });
+
 
     // =========================
     // スクロール関連
@@ -228,5 +243,8 @@ $(function () {
         // urlが変化しないようにfalseを返す
         return false;
     });
+
+
+
 
 });

@@ -250,6 +250,8 @@ onsen
     }
 
     &__content {
+        position: relative;
+
         @include m.sp {
             display: flex;
             flex-direction: column;
@@ -259,8 +261,7 @@ onsen
 
     &__item {
         position: absolute;
-        top: 0;
-        left: 0;
+        inset: 0;
         width: 100%;
         opacity: 0;
         visibility: hidden;
