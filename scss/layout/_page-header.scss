@@ -1,0 +1,41 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixin" as m;
+
+/*-------------------------------------------
+ページヘッダ
+-------------------------------------------*/
+.page__header {
+    position: relative;
+    height: 70vh;
+
+    img {
+        object-position: bottom;
+    }
+
+    .page__title {
+        position: absolute;
+        bottom: 0;
+        color: $text-light;
+    }
+
+    .page__title--ja {
+        font-size: 50px;
+        font-weight: normal;
+        margin-right: 30px;
+
+        @include m.sp {
+            font-size: 32px;
+            margin-right: 10px;
+        }
+    }
+
+    .page__title--en {
+        font-family: "Marcellus", serif;
+        font-size: 30px;
+
+        @include m.sp {
+            font-size: 24px;
+        }
+    }
+
+}

@@ -9,16 +9,24 @@
 @use "components/btn";
 @use "components/bg-decor";
 @use "components/bg-video";
+@use "components/plan-table";
 
 
 // layout
 @use "layout/base";
 @use "layout/header";
 @use "layout/footer";
+@use "layout/page-header";
+@use "layout/animation";
+
 
 
 // pages
 @use "pages/top";
+@use "pages/about";
+@use "pages/info";
+@use "pages/location";
+@use "pages/news";
 
 
 

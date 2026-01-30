@@ -1,0 +1,121 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixin" as m;
+
+/*-------------------------------------------
+plan-table
+-------------------------------------------*/
+.plan-table {
+    width: 100%;
+    table-layout: fixed;
+    margin-bottom: 30px;
+    border-collapse: collapse;
+    font-size: 16px;
+    line-height: 1.6;
+
+    @include m.sp {
+        display: block; // テーブルをブロック要素化
+    }
+
+    tr {
+        border-bottom: 1px solid $accent-dark;
+
+        @include m.sp {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px 30px;
+        }
+
+        &:first-child {
+            border-top: 3px solid $accent-dark;
+        }
+    }
+
+    &__name {
+        width: 15%;
+        text-align: left;
+        font-weight: 500;
+        padding: 18px 10px;
+        white-space: nowrap;
+
+        @include m.sp {
+            display: block;
+            width: 100%;
+            padding: 0 0 10px 0;
+            color: $accent-dark;
+            font-weight: bold;
+        }
+    }
+
+    &__desc {
+        width: 65%;
+        padding: 18px 10px;
+        font-size: 14px;
+        opacity: 0.9;
+
+        @include m.sp {
+            display: block;
+            width: 100%;
+            padding: 0 0 10px 0;
+        }
+    }
+
+    &__price {
+        width: 20%;
+        text-align: right;
+        padding: 18px 10px;
+        letter-spacing: 0.05em;
+
+        @include m.sp {
+            display: block;
+            width: 100%;
+            padding: 0;
+            font-weight: bold;
+        }
+    }
+
+    &__note {
+        margin-top: 50px;
+        padding: 35px 30px 25px;
+        border: 2px solid $accent-dark;
+        position: relative;
+        background: rgba(255, 255, 255, 0.02);
+
+        @include m.sp {
+            padding: 30px 20px 20px;
+        }
+    }
+
+    &__note-title {
+        position: absolute;
+        top: 0;
+        left: 20px;
+        transform: translateY(-50%);
+        background: $bg-sub;
+        padding: 0 15px;
+        font-weight: bold;
+        color: $accent-dark;
+        letter-spacing: 0.05em;
+    }
+
+    &__note-list {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    &__note-list li {
+        font-size: 14px;
+        line-height: 1.8;
+        margin-bottom: 8px;
+        opacity: 0.9;
+        padding-left: 1.5em;
+        position: relative;
+
+        &::before {
+            content: "※";
+            position: absolute;
+            left: 0;
+            color: $accent-dark;
+        }
+    }
+}

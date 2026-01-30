@@ -1,0 +1,100 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixin" as m;
+
+/*-------------------------------------------
+aboutページ
+-------------------------------------------*/
+.p-about {
+    &__inner {
+        display: flex;
+        z-index: 10;
+    }
+
+    // あとで共通化！！
+    .p__section-title {
+        font-size: 32px;
+    }
+
+    // === 源泉 ===
+    &__source {
+        position: relative;
+        overflow: hidden;
+        background: $bg-sub;
+
+        // 背景装飾
+        .bg-decor__img--drop {
+            width: 40%;
+            height: 50%;
+
+            &.top {
+                left: 0;
+                top: 0;
+            }
+
+            &.bottom {
+                bottom: 0;
+                left: 30%;
+                transform: rotate(-180deg);
+            }
+
+        }
+    }
+
+    // === 泉質 ===
+
+    &__quality {
+        position: relative;
+        overflow: hidden;
+        background: $bg-base;
+
+        // 背景装飾
+        .bg-decor__img--drop {
+            width: 40%;
+            height: 50%;
+
+            &.top {
+                top: 12%;
+                right: -5%;
+            }
+
+            &.bottom {
+                bottom: -20%;
+                left: 10%;
+            }
+
+        }
+
+    }
+
+    // === 大浴場 ===
+    &__bath {
+        position: relative;
+        overflow: hidden;
+        background: $bg-sub;
+
+        .bg-decor__img--drop {
+            width: 40%;
+            height: 50%;
+
+            &.top {
+                left: 0;
+                top: 0;
+            }
+            
+            &.middle {
+                left: 0;
+                top: 0;
+            }
+
+            &.bottom {
+                bottom: 0;
+                left: 30%;
+                transform: rotate(-180deg);
+            }
+
+        }
+    }
+
+    // === 宿泊 ===
+
+}

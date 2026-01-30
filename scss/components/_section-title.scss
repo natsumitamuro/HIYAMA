@@ -6,6 +6,8 @@ section-title
 -------------------------------------------*/
 .section-title {
     margin-bottom: 90px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid $accent-dark;  // 一時リリース用に追加
 
     @include m.tab {
         margin-bottom: 40px;
@@ -23,10 +25,6 @@ section-title
 
         @include m.tab {
             font-size: 48px;
-        }
-
-        @include m.sp {
-            font-size: 32px;
         }
     }
 

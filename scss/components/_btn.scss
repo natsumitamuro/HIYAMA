@@ -10,6 +10,7 @@ btn
     0% {
         background-position: 0 0;
     }
+
     100% {
         background-position: 10px 0;
     }
@@ -21,7 +22,7 @@ btn
     padding-bottom: 8px;
     color: var(--link-color);
     text-decoration: none;
-    
+
     // 下線
     &::after {
         content: "";
@@ -43,8 +44,9 @@ btn
         transform: translateY(-50%);
         width: 15px;
         height: 10px;
-        
-        &::before, &::after {
+
+        &::before,
+        &::after {
             content: "";
             position: absolute;
             right: 0;
@@ -54,8 +56,16 @@ btn
             border-radius: 2px;
             transition: transform 0.3s ease;
         }
-        &::before { top: 1px; transform: rotate(45deg); }
-        &::after { bottom: 1px; transform: rotate(-45deg); }
+
+        &::before {
+            top: 1px;
+            transform: rotate(45deg);
+        }
+
+        &::after {
+            bottom: 1px;
+            transform: rotate(-45deg);
+        }
     }
 
     &:hover {
@@ -63,7 +73,13 @@ btn
             animation: line-flow 0.5s linear infinite;
         }
 
-        .arrow-icon::before { transform: translateX(5px) rotate(45deg); }
-        .arrow-icon::after { transform: translateX(5px) rotate(-45deg); }
+        .arrow-icon::before {
+            transform: translateX(5px) rotate(45deg);
+        }
+
+        .arrow-icon::after {
+            transform: translateX(5px) rotate(-45deg);
+        }
     }
 }
+
